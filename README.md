@@ -1,25 +1,35 @@
-# Metodología
+# Talleres de Las Palmas DevOps
+
+En este repositorio de gestionarán los talleres propuestos desde el grupo [Las Palmas DevOps](https://groups.google.com/forum/#!forum/laspalmas-devops) ([MeetUp](http://www.meetup.com/Las-Palmas-DevOps/)).
+
+Los talleres van enfocados a profesionales de IT (progamadores, administradores de sistemas, ingenieros de calidad, maquetadores, etc) que quieran complementar su formación o ponerse al día.
+
+También para estudiantes que quieran aprender herramientas, tecnologías, metodologías y problemas que se encontrarán en su futura vida profesional.
+
+A continuación se explica el formato, metodología y se lista los talleres propuestos. Y en este repositorio se irán guardando los contenidos (presentaciones, ejercicios propuestos y material de apoyo) de los mismos.
+
+## Metodología
 
  * Progresivo
  * 1 o 2 sesiones por tema
  * Muy práctico
  * ~2 horas por taller
  
-# Esquema de una sesión
+## Esquema de una sesión
 
 * El problema
 * Concepto genérico de la solución
 * Ejemplo práctico con una tecnología/herramienta
 * Manos a la obra
 
-# Ejemplo
+## Ejemplo
 
 * **Problema**: Works on my machine
 * **Solución genérica**: entornos de desarrollo y pruebas similares a producción
 * **Solución concreta**: Vagrant + Chef
 * **Práctica**: Replicar un entorno de producción en nuestro portátil, hacer cambios en una aplicación y desplegarlo luego en producción.
 
-# Talleres
+## Talleres
 
 1. Editor:
   * Vim
@@ -136,7 +146,8 @@
   * Nginx
   * Amazon ELB
 
-* Extras:
+### Extras
+
 	* Hipervisores: KVM, XEN, VMware, VirtualBox
 	* Linux Containers: LXC, Docker
 	* Scrum, Kanban, ITIL, CMMI
