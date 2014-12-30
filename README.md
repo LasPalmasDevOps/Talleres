@@ -56,6 +56,8 @@
   * Python + iPython
   * Ruby + irb
 1. Depuración de código
+  * Depuración en código
+  * Depuración en el navegador
 1. Testing
   * Unit Test
   * Functional test
