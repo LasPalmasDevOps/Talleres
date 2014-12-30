@@ -170,5 +170,5 @@ A continuación se explica el formato, la metodología y se listan los talleres 
 		* Route 53.
 		* CloudFormation.
 		* CloudWatch.
-		* OpsWorks .
+		* OpsWorks.
 
