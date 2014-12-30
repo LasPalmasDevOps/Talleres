@@ -14,10 +14,10 @@
 
 # Ejemplo
 
-**Problema**: Works on my machine
-**Solución genérica**: entornos de desarrollo y pruebas similares a producción
-**Solución concreta**: Vagrant + Chef
-**Práctica**: Replicar un entorno de producción en nuestro portátil, hacer cambios en una aplicación y desplegarlo luego en producción.
+* **Problema**: Works on my machine
+* **Solución genérica**: entornos de desarrollo y pruebas similares a producción
+* **Solución concreta**: Vagrant + Chef
+* **Práctica**: Replicar un entorno de producción en nuestro portátil, hacer cambios en una aplicación y desplegarlo luego en producción.
 
 # Talleres
 
