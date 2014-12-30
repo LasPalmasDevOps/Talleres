@@ -11,15 +11,15 @@ A continuación se explica el formato, la metodología y se listan los talleres 
 ## Metodología
 
  * Progresivo.
- * 1 o 2 sesiones por tema.
  * Muy práctico.
- * ~2 horas por taller.
+ * 1 o 2 sesiones por taller.
+ * Aproximadamente 2 horas por sesión.
  
 ## Esquema de una sesión
 
 * El problema.
 * Concepto genérico de la solución.
-* Ejemplo práctico con una tecnología/herramienta.
+* Ejemplo práctico con una tecnología o herramienta.
 * Manos a la obra.
 
 ## Ejemplo
