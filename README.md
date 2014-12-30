@@ -104,6 +104,7 @@ A continuación se explica el formato, metodología y se lista los talleres prop
   * Amazon + Chef
 1. Integración Continua:
   * Jenkins
+  * TravisCI
 1. Desarrollo web básico:
   * HTTP
   * HTML5 + CSS
