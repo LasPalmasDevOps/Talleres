@@ -154,7 +154,6 @@ A continuación se explica el formato, la metodología y se listan los talleres 
 	* Scrum, Kanban, ITIL, CMMI.
 	* Internacionalización de software.
 	* Content Delivery Network (CDN).
-	* DNS.
 	* Private cloud: OpenStack.
 	* ElasticSearch.
 	* Servicios de colas de mensajes:
