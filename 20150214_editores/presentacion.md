@@ -114,7 +114,25 @@ Contenido de las diapos de eclipse
 
 --
 
+## Puntos fuertes de IntelliJ
+* [Edición community con todo lo necesario](https://www.jetbrains.com/idea/features/editions_comparison_matrix.html)
+* Gran catálogo de plugins
+* Apenas hace falta usar el ratón
+
+--
+# Características especiales de Intellij
+* Aistencia de código y refactorización.
+* Corrección de ortografía (Inglés)
+* Configura lo que se ejecuta y lo que se despliega
+
+--
+## ¿Qué vamos a hacer en el taller de intelliJ?
+* Como se usa
+* Como se configura
+* Como aplicar a la versión Ultimate
+
 ### Colaboradores
 
 * Pongan aquí su nombre/url
 * Oliver Gutiérrez (https://github.com/R3v1L)
+* Johan Sebastian Cortes (https://www.twitter.com/hinigul)
