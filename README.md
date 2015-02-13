@@ -31,7 +31,7 @@ A continuación se explica el formato, la metodología y se listan los talleres 
 
 ## Talleres
 
-1. Editor:
+1. [Editores](20150214_editores/README.md):
   * Vim.
   * Emacs.
   * Sublime Text.
