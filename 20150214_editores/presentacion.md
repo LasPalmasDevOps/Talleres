@@ -19,7 +19,7 @@ controls: true
 > Use a Single Editor Well
 >
 > -- The Pragmatic Programmer
-##[![The Pragmatic Programmer](images/thepragmaticprogrammer.png)](https://pragprog.com/the-pragmatic-programmer/extracts/tips)
+#[![The Pragmatic Programmer](images/thepragmaticprogrammer.png)](https://pragprog.com/the-pragmatic-programmer/extracts/tips)
 
 --
 
@@ -48,15 +48,72 @@ controls: true
 
 --
 
-### vi / vim
+> Comparison of text editors
+> ##[![Comparison of text editors](images/Comparison_of_text_editors.png)](http://en.wikipedia.org/wiki/Comparison_of_text_editors)
+> -- Wikipedia
 
-Contenido de las diapos de vim
+--
+
+### Vim
+* Licencia: Charityware
+* Versión estable: 7.4
+##[![Logo Vim](images/vimlogo.png)](http://www.vim.org)
+http://www.vim.org/
+
+--
+
+### Puntos fuertes de Vim
+* Ubicuo (multiplataforma y similitudes vi)
+* Ideal para línea de órdenes
+* Afín a cultura DevOps
+* Cumple las premisas de Power Editing (Pragmatic Programmer)
+
+--
+
+### Características especiales de Vim I
+* Modes (normal, insert, visual, command, etc)
+* Operator + Motion
+* Regex engine (search and replace)
+* Registers
+
+--
+
+### Características especiales de Vim II
+* Macros
+* Buffers
+* Autocompletion
+* Extensible (plugins, scripting)
+
+--
+
+### ¿Qué veremos de Vim en el taller?
+* Introducción básica
+* Trabajaremos con los distintos modos
+* Aprenderemos operadores y movimientos
+* Realizaremos búsquedas y substituciones
+* Usaremos macros para recordar acciones
+* Autocompletado, y no solo de código
+* Instalaremos plugins (pathogen o vundle) y veremos como retocarlos
 
 --
 
 ### Emacs
 
-Contenido de las diapos de emacs
+--
+
+### Puntos fuertes de Emacs
+
+--
+
+### Características especiales de Emacs I
+
+--
+
+### Características especiales de Emacs II
+
+--
+
+### ¿Qué veremos de Emacs en el taller?
 
 --
 
@@ -78,7 +135,7 @@ http://www.sublimetext.com/
 
 --
 
-### Características especiales de Sublime Text
+### Características especiales de Sublime Text I
 
 * Mapa del fichero
 * Paleta de comandos
@@ -87,7 +144,7 @@ http://www.sublimetext.com/
 
 --
 
-### Características especiales de Sublime Text (y 2)
+### Características especiales de Sublime Text II
 
 * Selección múltiple de texto
 * Múltiples cursores para edición en bloque
