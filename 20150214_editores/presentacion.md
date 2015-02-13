@@ -14,8 +14,37 @@ controls: true
 --
 
 ### ¿Por qué es tan importante un editor de texto?
+> Tip 22
+>
+> Use a Single Editor Well
+>
+> -- The Pragmatic Programmer
+##[![The Pragmatic Programmer](images/thepragmaticprogrammer.png)](https://pragprog.com/the-pragmatic-programmer/extracts/tips)
 
-* Indispensables en el trabajo diario de cualquier desarrollador u operador de sistemas
+--
+
+### Características deseables de un editor
+* Configurable
+* Extensible
+* Programable
+
+--
+
+### Características de programación
+* Syntax highlighting
+* Auto-completado
+* Auto-indentación
+* Código inicial (boiler plate)
+* Ayuda en línea
+* IDE (compilación, tests, etc)
+
+--
+
+### Editores
+* Vim
+* Emacs
+* Sublime Text
+* ~~Eclipse/IntelliJIDEA~~
 
 --
 
