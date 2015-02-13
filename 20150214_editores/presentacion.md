@@ -46,6 +46,7 @@ http://www.sublimetext.com/
 * Multiplataforma (Linux, Windows, MacOSX)
 * Extensible mediante plugins escritos en Python normalmente
 * Potentísimo sistema de plantillas de código
+
 --
 
 ### Características especiales de Sublime Text
@@ -54,15 +55,16 @@ http://www.sublimetext.com/
 * Paleta de comandos
 * Búsqueda global (Go to Anything)
 * Búsqueda y reemplazo usando expresiones regulares
+
 --
 
 ### Características especiales de Sublime Text (y 2)
 
-* Edición avanzada:
-    * Selección múltiple de texto
-    * Múltiples cursores para edición en bloque
+* Selección múltiple de texto
+* Múltiples cursores para edición en bloque
 * Definición de múltiples ventanas de edición
 * Modo "Sin distracciones"
+
 --
 
 ### ¿Qué veremos de Sublime Text en el taller?
@@ -73,7 +75,8 @@ http://www.sublimetext.com/
 * Gestión de un proyecto
 * Búsqueda global y con expresiones regulares
 * Package manager y plugins
-* Lo que de tiempo
+* Lo que de tiempo a probar
+
 --
 
 ### Eclipse
