@@ -1,17 +1,24 @@
 # Ejercicios de emacs del taller de editores
 
 1. Tutorial básico
+
+M-x eww
+goo.gl/5230AN
+M-x doc-view-mode
+C-x 5 2
+
+Alt-x eww <enter>
+goo.gl/5230AN
+Alt-x doc-view-mode <enter>
+Control-x 5 2
+
+
 Control-h Control-a
 (+ flechas para movernos, C-n/p/f/b, C-x b, C-x C-s, C-x C-c, C-x 5 2...)
 Tutorial
 Emacs guided tour
 
 cse.unl.edu/~choueiry/S08-476-876/Recitation/EmacsRecit.ps
-
-M-x eww <enter>
-goo.gl/5230AN
-M-x doc-view-mode
-C-x 5 2
 
 
 
