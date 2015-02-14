@@ -22,7 +22,7 @@ Control-h Control-a
 Tutorial
 Emacs guided tour
 
-[cse.unl.edu/~choueiry/S08-476-876/Recitation/EmacsRecit.ps](cse.unl.edu/~choueiry/S08-476-876/Recitation/EmacsRecit.ps)
+[cse.unl.edu/~choueiry/S08-476-876/Recitation/EmacsRecit.ps](http://cse.unl.edu/~choueiry/S08-476-876/Recitation/EmacsRecit.ps)
 
 
 ## 2. Nomenclatura
