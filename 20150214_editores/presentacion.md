@@ -44,7 +44,7 @@ controls: true
 * Vim
 * Emacs
 * Sublime Text
-* ~~Eclipse/IntelliJIDEA~~
+* ~~Eclipse/IntelliJ~~
 
 --
 
@@ -221,9 +221,7 @@ http://www.sublimetext.com/
 
 --
 
-### Eclipse
-
-Contenido de las diapos de eclipse
+### IntelliJ
 
 --
 
@@ -233,16 +231,20 @@ Contenido de las diapos de eclipse
 * Apenas hace falta usar el ratón
 
 --
-# Características especiales de Intellij
+
+# Características especiales de IntelliJ
 * Aistencia de código y refactorización.
 * Corrección de ortografía (Inglés)
 * Configura lo que se ejecuta y lo que se despliega
 
 --
-## ¿Qué vamos a hacer en el taller de intelliJ?
+
+## ¿Qué vamos a hacer en el taller de IntelliJ?
 * Como se usa
 * Como se configura
 * Como aplicar a la versión Ultimate
+
+--
 
 ### Colaboradores
 
