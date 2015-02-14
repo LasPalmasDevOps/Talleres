@@ -220,8 +220,9 @@ http://www.sublimetext.com/
 * Lo que dé tiempo a probar
 
 --
+# Intellij IDEA the best for
+## Java - Android - Groovy - Scala - Clojure
 
-### IntelliJ
 
 --
 
