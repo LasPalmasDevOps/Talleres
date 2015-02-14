@@ -99,21 +99,77 @@ http://www.vim.org/
 
 ### Emacs
 
+![emacs icon 2](images/emacs.svg "Emacs icon")
+
+#### the extensible, customizable, self-documenting, real-time display editor
+
+--
+
+* *GNU* Emacs
+* Licencia: GNU GPL v.3
+* Versión estable: 24.4
+
 --
 
 ### Puntos fuertes de Emacs
 
+* Multiplataforma (Win, Mac, POSIX, emacs...)
+* Herramienta todoterreno
+  * Línea de órdenes, X local, tramp, ...
+  * Usos distintos (leng. prog., edición textos, IRC, org., ...)
+* Hiperextensible
+
 --
 
-### Características especiales de Emacs I
+### Puntos fuertes de Emacs
+
+* extensible
+  * leng. prog.
+
+* personalizable
+  * sistema de conf.
+  * leng. prog.
+
+* auto-documentado
+  * sistema de ayuda general
+  * manuales
+  * leng. prog.
+
+* visualizado en tiempo real
+
+* editor
+
+--
+
+### Características especiales de Emacs
+
+* modos mayores y menores
+
+* funciones/comandos y teclas
+
+* buffers y minibuffer (y modeline)
 
 --
 
 ### Características especiales de Emacs II
 
+* puede (y suele) copiar lo bueno :)
+
+* términos (y opciones por defecto) anticuadas :(
+
+* no hay privilegio para lib. básicas :)
+
 --
 
 ### ¿Qué veremos de Emacs en el taller?
+
+* Tutorial básico (movernos, cerrar, cambiar buffer...)
+* Algo de nomenclatura
+* Sistema de ayuda
+* Sistema de paquetes
+* Configuración básica y avanzada
+* Macros
+* ...
 
 --
 
@@ -161,7 +217,7 @@ http://www.sublimetext.com/
 * Gestión de un proyecto
 * Búsqueda global y con expresiones regulares
 * Package manager y plugins
-* Lo que de tiempo a probar
+* Lo que dé tiempo a probar
 
 --
 
@@ -190,6 +246,7 @@ Contenido de las diapos de eclipse
 
 ### Colaboradores
 
-* Pongan aquí su nombre/url
+* Carlos López (https://github.com/morrizon)
 * Oliver Gutiérrez (https://github.com/R3v1L)
 * Johan Sebastian Cortes (https://www.twitter.com/hinigul)
+* Abby Henríquez (https://github.com/paradoja)
