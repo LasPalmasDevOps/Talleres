@@ -131,6 +131,7 @@ Esto se representa agrupando los permisos vistos arriba en 3 grupos:
 | *others*  | `------rwx` |
 
 Ejemplos:
+
 | Permisos | owner | group | archivo |
 |------------|------------|---------|----------|
 | `-rw-r--r--` | `root`   | `root`  | `/etc/passwd` |
@@ -156,6 +157,7 @@ Equivalencias:
 > **NOTA:**  No hay que olvidad que hay que seguir agrupando los valores de 3 en 3, para seguir teniendo permisos para el `owner`, el `group` y `others`.
 
 Ejemplo:
+
 | Permisos    | Octal       | Valor numérico    |
 |-------------|-------------|-------------------|
 | `rw-r--r--` | `420 400 400` | `644` |
