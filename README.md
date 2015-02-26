@@ -37,12 +37,10 @@ A continuación se explica el formato, la metodología y se listan los talleres 
   * Sublime Text.
   * Eclipse.
   * IntelliJ IDEA.
-1. Línea de órdenes y scripts:
-  * Bash.
-  * PowerShell.
-1. SSH:
-  * Uso básico.
-  * Claves públicas.
+1. [Línea de órdenes y SSH](20150228_cli_ssh):
+  * Bash, PowerShell.
+  * Uso básico de SSH.
+  * Claves públicas SSH.
 1. Sistema de control de versiones:
   * Git.
   * Workflows.
