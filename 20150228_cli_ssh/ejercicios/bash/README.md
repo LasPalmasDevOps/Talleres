@@ -317,12 +317,12 @@ print os.environ["HOME"]
 ```
 
 Ruby:
-```
+```ruby
 puts ENV['HOME']
 ```
 
 Php:
-```
+```php
 echo getenv('HOME');
 ```
 
