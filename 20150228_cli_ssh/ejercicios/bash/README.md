@@ -22,7 +22,8 @@ $ man chmod
 ```
 Eso nos mostrará la ayuda de la orden `chmod`.
 
-**TIP:** Si no tenemos claro qué orden buscamos, podemos preguntarle al manual (con la orden `apropos`) por algo que nos recuerde a lo que buscamos. En el ejemplo de antes  buscamos una orden para cambiar los permisos:
+> **TIP:** Si no tenemos claro qué orden buscamos, podemos preguntarle al manual (con la orden `apropos`) por algo que nos recuerde a lo que buscamos. En el ejemplo de antes  buscamos una orden para cambiar los permisos:
+
 ```
 $ apropos permissions
 access (2)           - check real user's permissions for a file
@@ -33,7 +34,8 @@ ioperm (2)           - set port input/output permissions
 ```
 
 ### Tipos de archivos
-**NOTA:** En Unix/linux, *todo es un archivo*
+
+> **NOTA:** En Unix/linux, *todo es un archivo*
 
 * Archivos
 * Directorios
@@ -134,7 +136,7 @@ Ejemplos:
 | `-rw-r--r--` | `root`   | `root`  | `/etc/passwd` |
 | `drwxr-xr-x` | `root`   | `root`  | `/etc/init.d` |
 
-**NOTA:** La `d` o `-` inicial en los permisos indica si es o no un directorio. Si lleva una `d` es un directorio.
+> **NOTA:** La `d` o `-` inicial en los permisos indica si es o no un directorio. Si lleva una `d` es un directorio.
 
 ### Permisos en modo numérico (octal)
 
@@ -151,7 +153,7 @@ Equivalencias:
 | `rw-`  | `420` | `6` |
 | `rwx`  | `421` | `7` |
 
-**NOTA:**  No hay que olvidad que hay que seguir agrupando los valores de 3 en 3, para seguir teniendo permisos para el `owner`, el `group` y `others`.
+> **NOTA:**  No hay que olvidad que hay que seguir agrupando los valores de 3 en 3, para seguir teniendo permisos para el `owner`, el `group` y `others`.
 
 Ejemplo:
 | Permisos    | Octal       | Valor numérico    |
@@ -172,6 +174,7 @@ Para las letras hay que tener en cuenta 2 cosas:
 ```
 $ chmod +x my_script.sh
 ```
+
 Este ejemplo **añade** permisos de ejecución a los permisos que ya tenía el archivo.
 Esta forma es útil cuando no necesitas saber los permisos totales del archivo, solo añadir o quitar uno.
 
@@ -215,7 +218,7 @@ Si queremos cambiarle también el grupo (por ejemplo, al grupo `webadmin`), lo h
 $ chown new_owner:webadmin file.txt
 ```
 
-**NOTA:** Existe una orden (`chgrp`) para cambiar únicamente el grupo.
+> **NOTA:** Existe una orden (`chgrp`) para cambiar únicamente el grupo.
 
 ## Acciones básicas
 
@@ -260,7 +263,7 @@ NUM=35
 a=0
 ```
 
-**NOTA:** Nótese que no hay espacios entre el nombre la la variable, el signo `=` y el valor que se asigna a la variable.
+> **NOTA:** Nótese que no hay espacios entre el nombre la la variable, el signo `=` y el valor que se asigna a la variable.
 El nombre de la variable puede  ser tanto mayúsculas como minúsculas.
 
 Para usar la variables solo necesitamos poner su nombre precedido del símbolo del dolar (`$`):
@@ -280,7 +283,7 @@ Pero también pueden modificarse o crearse durante la sesión. La forma de crear
 $ export HOME=/tmp/new_home/
 ```
 
-**NOTA**: Nótese que a la hora de *exportar* una variable no se le antepone el símbolo `$`.
+> **NOTA**: Nótese que a la hora de *exportar* una variable no se le antepone el símbolo `$`.
 
 Para ver las variables de entorno disponibles se puede lanzar la orden `env`:
 ```
@@ -345,7 +348,7 @@ Como en cualquier programa Bash se puede configurar. La configuración es bastan
 En estos archivos de configuración se pueden definir variables de entorno que siempre usamos o crear alias para operaciones que hacemos con frecuencia.
 También es útil para redefinir valores de variables de entorno como el `PATH` o `PS1`.
 
-**NOTA:** "*Cargar*" un archivo de configuración es algo parecido a *importar* o *cargar* una librería en un lenguaje de programación.
+> **NOTA:** "*Cargar*" un archivo de configuración es algo parecido a *importar* o *cargar* una librería en un lenguaje de programación.
 Lo que realmente se hace es leer el archivo y ejecutar su contenido. La forma de hacerlo es mediante la orden `source` o su equivalente `.`:
 ```
 $ source file_rc.sh
@@ -366,7 +369,7 @@ En caso de entrar en la *shell* con el usuario y contraseña (vía `ssh`, en la 
 En caso de arrancarse simplemente la *shell*, sin hacer *login*, se cargará el archivo `~/.bashrc`.
 En este caso no se cargarán los archivos mencionados antes.
 
-**NOTA:** Es bastante común poner todas las definiciones del usuario en el archivo `~/.bashrc` y desde el archivo `~/.bash_profile` cargarlo.
+> **NOTA:** Es bastante común poner todas las definiciones del usuario en el archivo `~/.bashrc` y desde el archivo `~/.bash_profile` cargarlo.
 De esta forma, tanto si arrancamos la *shell* de una u otra forma, se cargarán dichos valores. Sin tener que duplicar dichas definiciones.
 
 
