@@ -222,6 +222,20 @@ $ chown new_owner:webadmin file.txt
 
 > **NOTA:** Existe una orden (`chgrp`) para cambiar únicamente el grupo.
 
+### Ejercicios
+
+1. Crear un archivo y ver con qué permisos se crea.
+1. ¿Cómo serían esos permisos en octal?
+1. Darle permisos de ejecución.
+1. Hacer que sólo el propietario del archivo pueda leer el archivo.
+1. Crear un directorio y ver con qué permisos se crea.
+1. ¿Cómo serían esos permisos en octal?
+1. Ponerle permisos 444. ¿Qué permisos serían esos? ¿Tu usuario podría entrar en el directorio?
+1. Modificar los permisos para que solo el propietario pueda entrar en el directorio.
+1. Hacer que el usuario `root` sea el propietario del directorio. ¿Podemos entrar en el directorio?
+
+> TIP: Órdenes que podrían ser útiles en estos ejercicios: `touch`, `ls`, `chown`, `cd` y `sudo`.
+
 ## Acciones básicas
 
 * Mostrar algo por pantalla (`echo`)
@@ -286,6 +300,20 @@ $ mv file.txt archivo.txt
 $ ls
 archivo.txt
 ```
+
+### Ejercicios
+
+1. Crear un directorio llamado `tests`.
+1. Entrar en el directorio.
+1. Crear un archivo llamado `file.txt` que ponga "Hola mundo".
+1. Mostrar el contenido del archivo por pantalla.
+1. Renombrar el archivo `file.txt` como `archivo1.txt`.
+1. Crear una copia el archivo `archivo1.txt` que se llame `archivo2.txt`.
+1. Crear una copia del directorio `tests` que se llame `pruebas`.
+1. Borrar el directorio `tests`.
+
+> TIP: Mirar el manual y la ayuda de las órdenes que se muestran arriba.
+
 
 ## Variables
 
@@ -374,6 +402,22 @@ Hay algunas variables especiales que guardan valores temporales y que pueden ser
 | `$_` | Último parámetro de la orden anterior. |
 
 
+### Ejercicios
+
+1. Mostrar por pantalla cuál es el directorio actual, usando únicamente la orden `echo` (*Pista*: se pueden usar las variables que haga falta).
+1. Añadir al `PATH` el directorio `bin` dentro del `home` del usuario.
+1. Crea una variable llamada `VAR` que contenga el valor `Esto es una prueba`.
+1. Cambia el valor de la variable `VAR` para que contenga `20`.
+1. Comprobar si la variable está entre las variables de entorno.
+1. Si no lo está, hacer que lo esté.
+1. Mostrar por pantalla una línea similar a la siguiente, pero con los datos de tu sistema. No puedes escribir diréctamente lo que está entre comillas:
+```
+Hola, soy "Pepe", vivo en "/home/pepe", aunque ahora estoy en "/home/pepe/pruebas" y mi shell es "/bin/bash".
+```
+
+> TIP: El `PATH` es una variable de entorno que indica en qué directorios se van a buscar los programas que se pueden lanzar desde la *shell*.
+
+
 ## Configuración de la shell
 
 Como en cualquier programa Bash se puede configurar. La configuración es bastante flexible y dinámica, porque se basa, en gran medida, en  las variables de entorno que antes explicamos. Estas variables se guardan en archivos de configuración.
@@ -406,6 +450,16 @@ En este caso no se cargarán los archivos mencionados antes.
 De esta forma, tanto si arrancamos la *shell* de una u otra forma, se cargarán dichos valores. Sin tener que duplicar dichas definiciones.
 
 
+### Ejercicios
+
+1. Hacer que cuando se abra otra *shell* esté disponible la variable `MY_VAR` con valor `100`.
+1. Abrir otra *shell* y comprobar que está disponible dicha variable.
+1. Hacer que la variable `MY_VAR` tenga valor `LOGIN` cuando se entre en una nueva sesión con *login* y `NOLOGIN` cuando se abra otra *shell* sin hacer *login*.
+1. Hacer que en las nuevas sesiones, cuando se lance la orden `list`, se lance realmente la orden `ls`.
+
+> TIP: Buscar información sobre la orden `alias` y leer el archivo `~/.bashrc`.
+
+
 ## Entrada y salida
 
 * Descriptores especiales (`stdin`, `stdout` y `stderr`)
@@ -426,6 +480,21 @@ $ ls /directorio_inexistente/ 2> error.log
 $ echo "Hola" | sed 's/o/a/g'
 Hala
 ```
+
+
+### Ejercicios
+
+1. Listar el contenido del directorio `/usr/lib` de forma paginada.
+1. Crear un archivo con el listado de las variables de entorno.
+1. Mostrar por pantalla el contenido de ese archivo, pero solo aquellas variables que contengan tu nombre de usuario.
+1. ¿Cuántas variables hay definidas en el archivo que empiecen por la letra `S`?
+1. Crea un archivo con el contenido del directorio `pruebas` que creaste antes.
+1. Cambia, en el archivo, las extensiones de los archivos que se muestran dentro (`archivo1.txt` y `archivo2.txt`) para que sean `.sh` en vez de `.txt`.
+1. Ejecuta la orden `grep user /etc/*` y guarda en un archivo llamado `user.txt` las coincidencias y en otro llamado `fails.txt` los errores.
+1. Muestra por pantalla y en orden alfabético los nombres de los archivos que hay en `fails.txt. Únicamente los nombres de los archivos.
+
+> TIP: Mirar las utilidades `grep`, `sed`, `sort` y `wc`.
+
 
 ## Estructuras de control
 
