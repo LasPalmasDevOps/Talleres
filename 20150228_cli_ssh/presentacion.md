@@ -32,7 +32,7 @@ Primero debemos dar un paso atrás y ver lo que es una **Shell**.
 * Interfaz de usuario con el sistema operativo.
 * Permite gestionar archivos y directorios.
 * Permite lanzar y cerrar programas.
-* Un progama más.
+* Un programa más.
 
 --
 
