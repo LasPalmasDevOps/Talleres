@@ -124,18 +124,18 @@ Cada archivo (o directorio) tiene definidos sus permisos para 3 entidades dentro
 
 Esto se representa agrupando los permisos vistos arriba en 3 grupos:
 
-| entidad   | permisos |
-|-----------|----------|
-| *owner*   | `rwx------` |
-| *group*   | `---rwx---` |
-| *others*  | `------rwx` |
+| entidad  | permisos    |
+|----------+-------------|
+| *owner*  | `rwx------` |
+| *group*  | `---rwx---` |
+| *others* | `------rwx` |
 
 Ejemplos:
 
-| Permisos | owner | group | archivo |
-|------------|------------|---------|----------|
-| `-rw-r--r--` | `root`   | `root`  | `/etc/passwd` |
-| `drwxr-xr-x` | `root`   | `root`  | `/etc/init.d` |
+| Permisos     | owner  | group  | archivo       |
+|--------------+--------+--------+---------------|
+| `-rw-r--r--` | `root` | `root` | `/etc/passwd` |
+| `drwxr-xr-x` | `root` | `root` | `/etc/init.d` |
 
 > **NOTA:** La `d` o `-` inicial en los permisos indica si es o no un directorio. Si lleva una `d` es un directorio.
 
@@ -146,22 +146,22 @@ En esta forma, cada tipo de permiso tiene un valor (`r` => `4`) y para obtener e
 Equivalencias:
 
 | Letras | Octal | Valor numérico |
-|--------|-------|----------------|
-| `--x`  | `001` | `1` |
-| `-w-`  | `020` | `2` |
-| `r--`  | `400` | `4` |
-| `r-x`  | `401` | `5` |
-| `rw-`  | `420` | `6` |
-| `rwx`  | `421` | `7` |
+|--------+-------+----------------|
+| `--x`  | `001` | `1`            |
+| `-w-`  | `020` | `2`            |
+| `r--`  | `400` | `4`            |
+| `r-x`  | `401` | `5`            |
+| `rw-`  | `420` | `6`            |
+| `rwx`  | `421` | `7`            |
 
-> **NOTA:**  No hay que olvidad que hay que seguir agrupando los valores de 3 en 3, para seguir teniendo permisos para el `owner`, el `group` y `others`.
+> **NOTA:**  No hay que olvidar que hay que seguir agrupando los valores de 3 en 3, para seguir teniendo permisos para el `owner`, el `group` y `others`.
 
 Ejemplo:
 
-| Permisos    | Octal       | Valor numérico    |
-|-------------|-------------|-------------------|
-| `rw-r--r--` | `420 400 400` | `644` |
-| `rwxr-xr-x` | `421 401 401` | `755` |
+| Permisos    | Octal         | Valor numérico |
+|-------------+---------------+----------------|
+| `rw-r--r--` | `420 400 400` | `644`          |
+| `rwxr-xr-x` | `421 401 401` | `755`          |
 
 
 ### Cambiar los permisos de un archivo
@@ -182,11 +182,11 @@ Esta forma es útil cuando no necesitas saber los permisos totales del archivo, 
 
 * Se puede especificar la entidad sobre la que se especifica el permisos con una letra:
 
-| Letra | Entidad |
-|-------|---------|
+| Letra | Entidad                                   |
+|-------+-------------------------------------------|
 | `u`   | `owner` (usuario propietario del archivo) |
-| `g`   | `group` |
-| `o`   | `others`|
+| `g`   | `group`                                   |
+| `o`   | `others`                                  |
 
 
 Ejemplo:
@@ -389,17 +389,17 @@ echo getenv('HOME');
 
 Hay algunas variables especiales que guardan valores temporales y que pueden ser de mucha utilidad. Sobre todo en *scripts*.
 
-| Variable | Definición |
-|-----------|--------------|
-| `$*` | Lista de parámetros. |
-| `$@` | Lista de parámetros. |
-| `$#` | Número de parámetros. |
-| `$?` | Código de salida de la orden anterior. |
-| `$-` | Opciones o *flags* de la *shell*. |
-| `$$` | `PID` (identificador del proceso) del proceso actual. |
-| `$!` | `PID` del proceso más reciente que se esté ejecutando en segundo plano. |
-| `$0` | Nombre de la *shell* o del *shellscript* que se está ejecutando. |
-| `$_` | Último parámetro de la orden anterior. |
+| Variable | Definición                                                              |
+|----------+-------------------------------------------------------------------------|
+| `$*`     | Lista de parámetros.                                                    |
+| `$@`     | Lista de parámetros.                                                    |
+| `$#`     | Número de parámetros.                                                   |
+| `$?`     | Código de salida de la orden anterior.                                  |
+| `$-`     | Opciones o *flags* de la *shell*.                                       |
+| `$$`     | `PID` (identificador del proceso) del proceso actual.                   |
+| `$!`     | `PID` del proceso más reciente que se esté ejecutando en segundo plano. |
+| `$0`     | Nombre de la *shell* o del *shellscript* que se está ejecutando.        |
+| `$_`     | Último parámetro de la orden anterior.                                  |
 
 
 ### Ejercicios
@@ -784,4 +784,3 @@ $ echo ${a/foo/fu}
 ```
 
 # WIP
-
