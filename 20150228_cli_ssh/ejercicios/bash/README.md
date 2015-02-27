@@ -238,22 +238,53 @@ archivo1 archivo2 directorio/
 
 * Crear directorio (`mkdir`)
 ```
+$ ls
+
 $ mkdir new_directory
+$ ls
+new_directory
 ```
 
 * Borrar directorio (`rmdir`)
 ```
+$ ls
+old_directory
 $ rmdir old_directory
+$ ls
+
+```
+
+* Moverse de un directorio a otro (`cd`)
+```
+$ pwd
+/home/pepe
+$ cd /tmp/
+$ pwd
+/tmp
 ```
 
 * Borrar archivo (`rm`)
 ```
+$ ls
+file.txt other_file.txt
 $ rm file.txt
+$ ls
+other_file.txt
 ```
 
 * Ver el contenido de un archivo (`cat`, `less` o `more`)
 ```
 $ cat file.txt
+Contenido del archivo.
+```
+
+* Mover o renombrar un archivo o directorio (`mv`)
+```
+$ ls
+file.txt
+$ mv file.txt archivo.txt
+$ ls
+archivo.txt
 ```
 
 ## Variables
@@ -385,6 +416,9 @@ $ echo "Hola" > file.txt
 ```
 $ grep Hola < file.txt
 Hola
+```
+```
+$ ls /directorio_inexistente/ 2> error.log
 ```
 * Tuberías (*pipes*)
 
