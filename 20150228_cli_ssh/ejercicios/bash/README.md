@@ -585,11 +585,43 @@ esac
 
 ## Shellscripts
 
+Los *shellscripts* son secuancias de ordenes puestas en un archivo ejecutable. Funcionan como pequeños programas que usan las funciones internas y las órdenes disponibles en la *shell* que se indiquen.
+En caso de no indicarse ninguna, se usará la *shell* en la que se ha arrancado el *script*.
+
+Bash permite hacer *scripts* muy sencillos, pero también bastante complejos, pudiéndose agrupar secuencias de ordenes en funciones y llamarlas desde el mismo *script* o desde otro.
+
 ### Sha-bang
 
+El `sha-bang` es la marca que indica qué tipo de script es el archivo.
+Los primeros dos caracteres (`#!`) son reconocidos por el sistema a la hora de ejecutar un archivo y le dicen que es un script y que deben mirarse los siguientes caracteres para saber qué tipo de script es. Dichos siguientes caracteres deben ser el `PATH` del ejecutable de la *shell* en concreto.
+
+El más estándar para *shellscripts* es:
+```
+#!/bin/sh
+```
+
+Pero se puede especificar una *shell* en concreto:
 ```
 #!/bin/bash
 ```
+
+Aunque también se puede poner el ejecutable de algún lenguaje dinámico como Python, Ruby o Php:
+```
+#!/usr/bin/python
+```
+
+Incluso un ejecutable que no sea una *shell*:
+```
+#!/bin/rm
+
+# Este script lo único que hace es borrarse a sí mismo.
+```
+
+### Ejercicios
+
+1. Prueba a hacer un script (tienes que darle permisos de ejecución) en el que el `sha-bang` sea `#!/bin/echo` y comprueba a ver qué hace.
+
+
 
 ## Expansión de variables con ${}
 

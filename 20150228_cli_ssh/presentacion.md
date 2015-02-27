@@ -4,7 +4,8 @@ author:
   url: https://github.com/juanjeojeda
   twitter: juanjeojeda
 output: presentacion.html
-theme: sudodoki/reveal-cleaver-theme
+#theme: sudodoki/reveal-cleaver-theme
+theme: ./style
 controls: true
 
 --
