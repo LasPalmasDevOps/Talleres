@@ -125,7 +125,7 @@ Cada archivo (o directorio) tiene definidos sus permisos para 3 entidades dentro
 Esto se representa agrupando los permisos vistos arriba en 3 grupos:
 
 | entidad  | permisos    |
-|----------+-------------|
+|----------|-------------|
 | *owner*  | `rwx------` |
 | *group*  | `---rwx---` |
 | *others* | `------rwx` |
@@ -133,7 +133,7 @@ Esto se representa agrupando los permisos vistos arriba en 3 grupos:
 Ejemplos:
 
 | Permisos     | owner  | group  | archivo       |
-|--------------+--------+--------+---------------|
+|--------------|--------|--------|---------------|
 | `-rw-r--r--` | `root` | `root` | `/etc/passwd` |
 | `drwxr-xr-x` | `root` | `root` | `/etc/init.d` |
 
@@ -146,7 +146,7 @@ En esta forma, cada tipo de permiso tiene un valor (`r` => `4`) y para obtener e
 Equivalencias:
 
 | Letras | Octal | Valor numérico |
-|--------+-------+----------------|
+|--------|-------|----------------|
 | `--x`  | `001` | `1`            |
 | `-w-`  | `020` | `2`            |
 | `r--`  | `400` | `4`            |
@@ -159,7 +159,7 @@ Equivalencias:
 Ejemplo:
 
 | Permisos    | Octal         | Valor numérico |
-|-------------+---------------+----------------|
+|-------------|---------------|----------------|
 | `rw-r--r--` | `420 400 400` | `644`          |
 | `rwxr-xr-x` | `421 401 401` | `755`          |
 
@@ -183,7 +183,7 @@ Esta forma es útil cuando no necesitas saber los permisos totales del archivo, 
 * Se puede especificar la entidad sobre la que se especifica el permisos con una letra:
 
 | Letra | Entidad                                   |
-|-------+-------------------------------------------|
+|-------|-------------------------------------------|
 | `u`   | `owner` (usuario propietario del archivo) |
 | `g`   | `group`                                   |
 | `o`   | `others`                                  |
@@ -390,7 +390,7 @@ echo getenv('HOME');
 Hay algunas variables especiales que guardan valores temporales y que pueden ser de mucha utilidad. Sobre todo en *scripts*.
 
 | Variable | Definición                                                              |
-|----------+-------------------------------------------------------------------------|
+|----------|-------------------------------------------------------------------------|
 | `$*`     | Lista de parámetros.                                                    |
 | `$@`     | Lista de parámetros.                                                    |
 | `$#`     | Número de parámetros.                                                   |
