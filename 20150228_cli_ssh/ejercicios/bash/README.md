@@ -498,6 +498,39 @@ Hala
 
 ## Estructuras de control
 
+
+### Condiciones
+
+Tanto en los bucles como en las estructuras condicionales se usan condiciones para tomar una decisión (seguir en el bucle, salir del bucle o tomar un camino u otro de la bifurcación).
+
+La condición puede ser una comparación entre dos elementos o la ejecución de una orden, lo importante es que el resultado de un valor entero. Si ese valor es 0, se considerará que se cumple la condición, si es distinto de 0, no se cumple.
+
+En realidad, siempre se ejecuta una orden y lo que realmente se evalua es el código de salida (el código que devuelve un programa al terminar) de dicha orden.
+En el caso de una comparación, realmente se ejecuta la orden `test`, pasándole como parámetros, los elementos a comaprar y el tipo de comparación.
+
+> **TIP:** Consoltar la página del manual de la orden `test` (`man test`).
+
+Pero Bash tiene una forma sencilla de hacer la comparación de forma que no tengas que lanzar `test` y que sea más natural. Usando `[` y `]` que, en realidad, son un alias a `test`.
+
+Es decir, esto:
+```
+$ test  foo = bar
+$ echo $?
+1
+```
+
+es igual a esto:
+```
+$ [ foo = bar ]
+$ echo $?
+1
+```
+
+Ambas devuelven como código de salida 1, es decir, **distinto de 0**. Luego la comparación ha fallado.
+
+En algunos de los ejemplos siguientes usaremos las órdenes `true` y `false` que devuelven respectivamente `0` y `1`.
+
+
 ### Bucles
 
 * `for`
