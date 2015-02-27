@@ -200,7 +200,7 @@ Eso es equivalente a:
 $ chmod u=rw,g=r,o=r my_file.txt
 ```
 
-### Cambiar los permisos de un archivo
+### Cambiar el propietario de un archivo
 
 Algo que también puede hacernos falta alguna vez, es cambiar el propietario de un archivo.
 Hay que tener presente que solo podemos cambiar el propietario de un archivo sobre el que ya tengamos permisos y que solo podremos cambiarlo a un usuario o grupo al que pertenezcamos.
