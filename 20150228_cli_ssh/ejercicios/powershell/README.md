@@ -15,13 +15,6 @@ Get-Member
 help about_*
 ```
 
-También existe los Cmdlets
-```
-Cmdlets
-Verb-Noun
-Get-Command
-```
-
 ## Acciones básicas
 
 * Mostrar algo por pantalla (`echo`)
@@ -89,6 +82,14 @@ archivo.txt
 > **TIP**: Casi todos los comandos son realmente alias de PowerShell, ejecuta _Get-Alias_ para ver todos lo que hay definidos en PowerShell
 
 ## Acciones básicas (The Powershell way)
+
+Cmdlets
+```
+Verb-Noun
+Get-Command
+```
+
+
 
 * Mostrar algo por pantalla
 ```
@@ -235,7 +236,14 @@ $ >  o  comando | Out-File -Path Path
 $ <  o  Write-Output | comando
 ```
 ```
+$ 1> o Write-Output
+$ 2> o Write-Error
+$ 3> o Write-Warning
+...
 ```
+```
+```
+
 ### Tuberías (*pipes*)
 
 1. ByValue
@@ -257,7 +265,7 @@ $ comando | Foreach-Object -Process { Comandos }    (%)
 $ comando | Where-Object -FilterScript { Comandos }   (?)
 ```
 
-### Operadores de comparación (los más usados)
+### Operadores de comparación
 
 * -eq
 * -ne
@@ -271,6 +279,8 @@ $ comando | Where-Object -FilterScript { Comandos }   (?)
 * -like
 * -in
 * -contains
+* etc
+
 
 ### Operadores lógicos
 * -and
@@ -340,3 +350,11 @@ param (
   [int]$attemptcount = 5
 )
 ```
+
+## Remoting
+Enter-PSSession -ComputerName computer
+Get-PSSession
+Exit-PSSession
+
+###Workgroup
+Set-Item WSMan:\localhost\Client\TrustedHosts –Value <ServerMachineName>
