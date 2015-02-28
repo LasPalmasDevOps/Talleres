@@ -614,6 +614,25 @@ case "$VAR" in
     ;;
 esac
 ```
+* `&&` y `||`
+```
+$ true && echo "La condición es cierta"
+La condición es cierta
+$ false && echo "La condición es cierta"
+$ true || echo "La condición es falsa"
+$ false || echo "La condición es falsa"
+La condición es falsa
+$ a=20
+$ [ "$a" = 20 ] && echo "a es igual a 20"
+a es igual a 20
+```
+
+### Ejercicios
+
+1. Copia en el directorio `pruebas` todos los archivos de `/bin/`, pero añadiéndoles la extensión `.sh`.
+1. Define una variable `a` con valor `50` y una `b` con valor `30`. Luego haz que se evalúe si `a` es mayor que `b` y que se muestre el valor de la suma en caso de ser cierto.
+
+> **TIP:** Mirar la ayuda del comando `expr`.
 
 
 ## Shellscripts
