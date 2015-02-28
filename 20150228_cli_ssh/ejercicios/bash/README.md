@@ -780,7 +780,7 @@ EOF
 ```
 
 
-## Depuración de scipts
+## Depuración de scripts
 
 Mientras hacemos scripts, sobre todo cuando se vuelven complejos, es muy posible que necesitemos depurarlos y ver qué es lo que hacen realmente. Para ello puede ser muy útil la opción `set -x`.
 Dicha opción hace que se muestre cada una de las evaluaciones de órdenes que se hace durante la ejecución del script.
