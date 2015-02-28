@@ -484,7 +484,7 @@ Hasta que le dé a la combinación de teclas "Ctrl-D".
 ```
 * Concatenación (`>>` y `<<`). Lo mismo que las anteriores pero, en vez de reemplazar el valor (si el archivo ya existe), lo que hace es añadirlo al final del archivo.
 
-> **NOTA:** En el apartado de *"Material extra y referencias"* del final hay un sub-apartado relacionado (*HERE documents*), que puede ser de interés.
+> **NOTA:** En el apartado de *"Material extra y referencias"* del final hay un sub-apartado relacionado ([HERE documents](#here-documents)), que puede ser de interés.
 
 * Tuberías (*pipes*)
 
