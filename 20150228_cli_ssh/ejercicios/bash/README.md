@@ -802,6 +802,100 @@ brew install shellcheck
 
 Para otras opciones, mira en [el repo de Github](https://github.com/koalaman/shellcheck).
 
+## Arrays
+
+### Declarar un array
+
+Hay varias formas de declarar o crear un array:
+
+* Con `typeset` o `declare`:
+```
+$ typeset ARRAY[10] # Definido un array de nombre ARRAY de 10 elementos
+$ typeset -a VECTOR # Definido un array de nombre VECTOR sin tamaño definido
+$ declare ARRAY[10] # Definido un array de nombre ARRAY de 10 elementos
+$ declare -a VECTOR # Definido un array de nombre VECTOR sin tamaño definido
+```
+
+* Declarando y asignando diréctamente:
+```
+LIST[0]="Tomate"                     # Se crea un array LIST cuyo primer elemento es "tomate"
+NAMES=(Pepe Ana Juan Antonio María)  # Se crea una lista yle asigna los nombre.
+```
+
+> **NOTA:** Los arrays en Bash comienzan con el índice `0`.
+
+### Asignar valores
+
+Los valores se asignan de la siguiente forma:
+```
+NOMBRE_ARRAY[indice]=Valor
+```
+
+Por ejemplo:
+```
+LIST[1]="Zanahoria"
+```
+
+> **NOTA:** De no existir el *array*, se crearía con un único valor en la posición `1`.
+
+### Mostrar valores
+
+Para un elemento concreto se indica su índice:
+```
+${NOMBRE_ARRAY[indice]}
+```
+
+Por ejemplo:
+```
+$ echo ${LIST[0]}
+Tomate
+$ echo ${LIST[1]}
+Zanahoria
+```
+
+Para mostrar todos los valores se puede hacer de dos formas:
+
+* Devolviendo una cadena con todos los valores:
+```
+${NOMBRE_ARRAY[*]}
+```
+* Devolviendo una cadena por cada elemento
+```
+${NOMBRE_ARRAY[@]}
+```
+
+Ejemplos:
+```
+$ echo ${NAMES[*]}
+Pepe Ana Juan Antonio María
+$ echo ${NAMES[@]}
+Pepe Ana Juan Antonio María
+$ for i in  "${NAMES[*]}"; do echo $i ; done
+Pepe Ana Juan Antonio María
+$ for i in  "${NAMES[@]}"; do echo $i ; done
+Pepe
+Ana
+Juan
+Antonio
+María
+```
+
+### Tamaño del array
+
+Para saber el nombre del arrray:
+```
+${#NOMBRE_ARRAY[*]}
+```
+
+Ejemplo:
+```
+$ NAMES=(Pepe Ana Juan Antonio María)
+$ echo ${NAMES[*]}
+Pepe Ana Juan Antonio María
+$ echo ${#NAMES[@]}
+5
+```
+
 ## Expansión de variables
 
 La expansión de variables permite alterar de diferentes formas el valor de una variable, sin cambiar la variable en sí. Es muy útil cuando queremos definir valores predeterminados para una variable o si queremos usar solo una parte del contenido de la variable.
