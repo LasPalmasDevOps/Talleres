@@ -107,7 +107,7 @@ $ Get-ChildItem -Path Path
 $ New-Item -Name Name -Path Path
 ```
 
-* Borrar directorio 
+* Borrar directorio
 ```
 $ Remove-Item -Path Path
 
@@ -123,7 +123,7 @@ $ Set-Location -Path Path
 $ Remove-Item -Path Path
 ```
 
-* Ver el contenido de un archivo 
+* Ver el contenido de un archivo
 ```
 $ Get-Content -Path Path
 ```
@@ -332,12 +332,12 @@ c
 ```
 ls variable:k*
 ```
- 
+
 #### Operadores
 ```
 "string" -replace "k","$foo"
 @(array) -join 'k'
-"string" -split ' 
+"string" -split '
 ```
 
 ## Script Skeleton
@@ -346,7 +346,7 @@ ls variable:k*
 param (
   [Parameter(Mandatory=$True)]
   [string]$computername,
- 
+
   [Parameter(Mandatory=$True)]
   [string]$logfile,
 
@@ -355,9 +355,14 @@ param (
 ```
 
 ## Remoting
+
+```
 Enter-PSSession -ComputerName computer
 Get-PSSession
 Exit-PSSession
-
+```
 ###Workgroup
+
+```
 Set-Item WSMan:\localhost\Client\TrustedHosts –Value <ServerMachineName>
+```
