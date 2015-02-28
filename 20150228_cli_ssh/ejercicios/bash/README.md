@@ -474,6 +474,15 @@ Hola
 ```
 $ ls /directorio_inexistente/ 2> error.log
 ```
+```
+$ cat > file.txt
+Añado un texto al archivo escribiendo en el terminal.
+El "cat" le dice a Bash que quiero que redirija la
+entrada estándar al archivo "file.txt".
+Hasta que le dé a la combinación de teclas "Ctrl-D".
+^D
+```
+
 * Tuberías (*pipes*)
 
 ```
