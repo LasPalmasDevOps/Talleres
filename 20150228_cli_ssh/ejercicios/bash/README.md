@@ -707,9 +707,54 @@ No se ha pasado ningún parámetro.
 ```
 
 
+---
+
+# Material extra y referencias
 
 
-## Expansión de variables con ${}
+## Captura del resultado de lanzar una orden
+
+Muchas veces querremos lanzar una orden y capturar el resultado en una variable, para usar dicho valor más adelante.
+
+Por ejemplo, una lista de archivos, el ID de un usuario o el número de resultados encontrados en una búsqueda.
+
+Eso se puede hacer de 2 formas:
+
+```
+$ var=`ls /bin/`
+```
+
+Y
+
+```
+$ var=$(ls /bin/)
+```
+
+Pero la segunda es la más recomendada. De hecho la primera ha sido desaconsejada desde el proyecto Bash, en favor de la segunda.
+Para más información, consulta el manual de bash o [éste artículo](http://wiki.bash-hackers.org/syntax/expansion/cmdsubst).
+
+
+## Expansión de variables
+
+La expansión de variables permite alterar de diferentes formas el valor de una variable, sin cambiar la variable en sí. Es muy útil cuando queremos definir valores predeterminados para una variable o si queremos usar solo una parte del contenido de la variable.
+
+Un típico ejemplo es el de querer cambiar la extensión de un archivo:
+
+```
+$ ls
+mi_foto.JPG
+$ filename=$(ls)
+$ mv $filename ${filename%%JPG}jpg
+$ ls
+mi_foto.jpg
+```
+
+Aunque un ejemplo más realista sería cambiar la extensión a un conjunto de archivos:
+
+```
+$ for foto in images/*.JPG ; do mv $foto ${foto%%JPG}jpg ; done
+```
+
 
 ### Valor por defecto
 
@@ -869,4 +914,3 @@ $ echo ${a/foo/fu}
 /etc/kung/fu
 ```
 
-# WIP
