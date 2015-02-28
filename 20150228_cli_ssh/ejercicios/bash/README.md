@@ -463,7 +463,7 @@ De esta forma, tanto si arrancamos la *shell* de una u otra forma, se cargarán 
 ## Entrada y salida
 
 * Descriptores especiales (`stdin`, `stdout` y `stderr`)
-* Redirecciones. Manda la salida o entrada a un archivo u orden. Si el archivo no existe, lo crea, si existe, reemplaza su valor por el que se le pasa.
+* Redirecciones. Manda la salida o entrada a un archivo u orden. Si el archivo no existe, lo crea y si existe, reemplaza su valor por el que se le pasa.
 ```
 $ echo "Hola" > file.txt
 ```
