@@ -1,12 +1,12 @@
-# Taller de Bash
+# Taller de PowerShell
 
 ### Introducción
 
-Esta pequeña guía intenta explicar lo mismo que en la parte de [bash](../bash/README.md) pero para powershell.
+Esta pequeña guía intenta explicar lo mismo que en la parte de [bash](../bash/README.md) pero para Powershell.
 
 ### Ayuda
 
-En powershell hay varias maneras de obtener ayuda.
+En Powershell hay varias maneras de obtener ayuda.
 ```
 Get-Help -Name comando
 help comando
@@ -187,7 +187,7 @@ Para ver las variables de entorno disponibles se puede lanzar la orden `Get-Chil
 1. Si no lo está, hacer que lo esté.
 1. Mostrar por pantalla una línea similar a la siguiente, pero con los datos de tu sistema. No puedes escribir diréctamente lo que está entre comillas:
 ```
-Hola, soy "Pepe", vivo en "/Users/pepe", aunque ahora estoy en "/home/pepe/pruebas".
+Hola, soy "Pepe", vivo en "/Users/pepe", aunque ahora estoy en "C:/".
 ```
 
 
