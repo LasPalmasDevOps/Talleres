@@ -176,6 +176,9 @@ $ $env:foo = "bar"
 $ $env:foo
 ```
 
+### Providers
+Get-PSProvider
+Get-PSDrive
 
 Para ver las variables de entorno disponibles se puede lanzar la orden `Get-ChildItem -Path env`
 
