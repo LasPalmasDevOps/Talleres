@@ -320,7 +320,7 @@ c
 ls variable:k*
 ```
  
-####operadores
+#### Operadores
 ```
 "string" -replace "k","$foo"
 @(array) -join 'k'
