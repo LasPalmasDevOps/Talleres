@@ -669,6 +669,27 @@ Incluso un ejecutable que no sea una *shell*:
 # Este script lo único que hace es borrarse a sí mismo.
 ```
 
+### Comentarios
+
+Los comentarios en Bash comienzan con el símbolo `#`:
+
+```
+#!/bin/bash
+
+# Esto es un comentario.
+
+#
+# Otro comentario más largo.
+#
+
+################################
+#                              #
+# Típica cajita de comentarios #
+#                              #
+################################
+
+```
+
 ### Ejercicios
 
 1. Prueba a hacer un script (tienes que darle permisos de ejecución) en el que el `sha-bang` sea `#!/bin/echo` y comprueba a ver qué hace.
