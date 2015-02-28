@@ -693,6 +693,19 @@ Los comentarios en Bash comienzan con el símbolo `#`:
 ### Ejercicios
 
 1. Prueba a hacer un script (tienes que darle permisos de ejecución) en el que el `sha-bang` sea `#!/bin/echo` y comprueba a ver qué hace.
+1. Crear un script que muestre por pantalla el número de parámetros que se le pasa y los muestre luego, uno por línea y en mayúsculas, como se muestra a continuación. En caso de no pasárse ningún parámetro, debe indicarlo:
+
+```
+$ ./my_script.sh pera manzana naranja plátano
+Se han pasado 4 parámetros:
+* PERA
+* MANZANA
+* NARANJA
+* PLÁTANO
+$ ./my_script.sh
+No se ha pasado ningún parámetro.
+```
+
 
 
 
