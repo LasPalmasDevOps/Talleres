@@ -115,4 +115,13 @@ Telnet, SSH, FTP...
 
 A continuación veremos cómo usar una RUI: SSH
 
+(Abby Hernández Tejera)
+
 Luego veremos un ejemplo de CLI: Bash
+
+(Juanje Ojeda)
+
+Y otro ejemplo para Windows: PowerShell
+
+(Pablo Montesdeoca)
+
