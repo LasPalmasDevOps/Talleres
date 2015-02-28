@@ -764,6 +764,7 @@ cat <<EOF > salida.txt
 Ahora que le he indicado un archivo
 de salida al 'cat', redirigirá ahí
 todo este texto.
+EOF
 ```
 
 Pero también se puede pasar el texto a otra orden que admita una entrada de texto:
