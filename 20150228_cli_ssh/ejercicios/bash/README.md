@@ -742,6 +742,64 @@ $ var=$(ls /bin/)
 Pero la segunda es la más recomendada. De hecho la primera ha sido desaconsejada desde el proyecto Bash, en favor de la segunda.
 Para más información, consulta el manual de bash o [éste artículo](http://wiki.bash-hackers.org/syntax/expansion/cmdsubst).
 
+## HERE documents
+
+[HERE documents](http://tldp.org/LDP/abs/html/here-docs.html) es un bloque especial de código que usa la redirección `<<` para mandar todo lo que haya entre dos marcas al comando en cuestión.
+
+El caso más típico es el de imprimir por pantalla un texto de varias líneas sin usar un montón de `echo`:
+
+```
+cat <<EOF
+Ahora pongo un texto largo,
+son poner un solo 'echo' y
+todo este texto se mandará
+a la orden 'cat', que lo mandará
+a la salida estándar.
+EOF
+```
+
+O para mandarlo a un archivo:
+```
+cat <<EOF > salida.txt
+Ahora que le he indicado un archivo
+de salida al 'cat', redirigirá ahí
+todo este texto.
+```
+
+Pero también se puede pasar el texto a otra orden que admita una entrada de texto:
+```
+sed 's/e/3/g' <<EOF
+Vamos a cambiar todas las letras 'e'
+por 3, para parecer más "juankers" :-P
+EOF
+```
+
+
+## Depuración de scipts
+
+Mientras hacemos scripts, sobre todo cuando se vuelven complejos, es muy posible que necesitemos depurarlos y ver qué es lo que hacen realmente. Para ello puede ser muy útil la opción `set -x`.
+Dicha opción hace que se muestre cada una de las evaluaciones de órdenes que se hace durante la ejecución del script.
+
+La forma de usarla sería poniéndolo en el script:
+```
+set -x
+```
+
+La orden `set` permite cambiar *modos* de la *shell*.
+
+También se pueden usar herramientas para analizar la sintaxis. Por ejemplo, [ShellCheck](http://www.shellcheck.net/), una herramienta muy útil para detectar errores y para mejorar el estilo y calidad de nuestros scripts.
+Es una herramienta *online*, pero se puede descargar y usar en local:
+En distribuciones Linux basadas en Debian:
+```
+$ apt-get install shellcheck
+```
+
+En OS X con homebrew:
+```
+brew install shellcheck
+```
+
+Para otras opciones, mira en [el repo de Github](https://github.com/koalaman/shellcheck).
 
 ## Expansión de variables
 
