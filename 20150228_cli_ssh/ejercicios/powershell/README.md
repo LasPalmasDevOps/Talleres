@@ -197,7 +197,7 @@ Hola, soy "Pepe", vivo en "/Users/pepe", aunque ahora estoy en "C:/".
 
 ## Configuración de la shell
 
-Como en cualquier programa Bash se puede configurar. La configuración es bastante flexible y dinámica, porque se basa, en gran medida, en  las variables de entorno que antes explicamos. Estas variables se guardan en archivos de configuración.
+Como en cualquier programa Powershell se puede configurar. La configuración es bastante flexible y dinámica, porque se basa, en gran medida, en  las variables de entorno que antes explicamos. Estas variables se guardan en archivos de configuración.
 
 En estos archivos de configuración se pueden definir variables de entorno que siempre usamos o crear alias para operaciones que hacemos con frecuencia.
 También es útil para redefinir valores de variables de entorno como el `PATH` o `PS1`.
@@ -337,7 +337,7 @@ ls variable:k*
 ```
 "string" -replace "k","$foo"
 @(array) -join 'k'
-"string" -split '
+"string" -split ''
 ```
 
 ## Script Skeleton
