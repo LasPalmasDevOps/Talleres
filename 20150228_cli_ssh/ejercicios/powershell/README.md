@@ -180,7 +180,7 @@ Para ver las variables de entorno disponibles se puede lanzar la orden `Get-Chil
 
 ### Ejercicios
 
-1. Mostrar por pantalla cuál es el directorio actual, usando únicamente la orden `echo` (*Pista*: se pueden usar las variables que haga falta).
+1. Mostrar por pantalla cuál es el directorio actual, usando únicamente la orden `Write-Output` (*Pista*: se pueden usar las variables que haga falta).
 1. Crea una variable llamada `VAR` que contenga el valor `Esto es una prueba`.
 1. Cambia el valor de la variable `VAR` para que contenga `20`.
 1. Comprobar si la variable está entre las variables de entorno.
@@ -216,7 +216,7 @@ $ . file_rc.ps1
 
 ### Descriptores
 
-En PowerShell hay 10 descriptores
+En PowerShell hay varios descriptores:
 
 1. stdin
 1. stdout (write-output, normal cmdlet output, non captured expression output)
@@ -227,7 +227,7 @@ En PowerShell hay 10 descriptores
 1. host (write-host, read-host, explicit out-host use)
 1. combined (all output combined into a single - easy to redirect stream)
 
-* Redirecciones
+### Redirecciones
 ```
 $ >  o  comando | Out-File -Path Path
 ```
@@ -236,7 +236,7 @@ $ <  o  Write-Output | comando
 ```
 ```
 ```
-* Tuberías (*pipes*)
+### Tuberías (*pipes*)
 
 1. ByValue
 1. ByPropertyName
@@ -291,10 +291,52 @@ elseif ( condición ) { comandos }
 ```
 else { comandos }
 ```
+* `switch`
+```
+switch (condicion) {
+   1 { comandos; break }
+   2 { comandos }
+   3 { comandos }
+}
+
+switch [-regex | -wildcard ...
+help about_switch
+```
 
 ### Mostrar error si no existe la variable
 
 Usando _Test-Path_ podemos comprobarlo
 ```
 $ Test-Path -Path variable:foo
+```
+
+### Subcadenas del valor de la variable
+```
+$ "abcde".Substring(2,1)
+c
+```
+###  Nombres de variables que empiecen por un prefijo
+```
+ls variable:k*
+```
+ 
+####operadores
+```
+"string" -replace "k","$foo"
+@(array) -join 'k'
+"string" -split ' 
+```
+
+## Script Skeleton
+```
+[CmdletBinding()]
+param (
+  [Parameter(Mandatory=$True)]
+  [string]$computername,
+ 
+  [Parameter(Mandatory=$True)]
+  [string]$logfile,
+
+  [int]$attemptcount = 5
+)
 ```
