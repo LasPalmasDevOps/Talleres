@@ -819,7 +819,7 @@ $ declare -a VECTOR # Definido un array de nombre VECTOR sin tamaño definido
 * Declarando y asignando diréctamente:
 ```
 LIST[0]="Tomate"                     # Se crea un array LIST cuyo primer elemento es "tomate"
-NAMES=(Pepe Ana Juan Antonio María)  # Se crea una lista yle asigna los nombre.
+NAMES=(Pepe Ana Juan Antonio María)  # Se crea una lista y le asigna los nombres.
 ```
 
 > **NOTA:** Los arrays en Bash comienzan con el índice `0`.
@@ -835,8 +835,6 @@ Por ejemplo:
 ```
 LIST[1]="Zanahoria"
 ```
-
-> **NOTA:** De no existir el *array*, se crearía con un único valor en la posición `1`.
 
 ### Mostrar valores
 
