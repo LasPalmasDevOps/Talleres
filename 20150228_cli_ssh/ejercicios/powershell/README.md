@@ -2,7 +2,7 @@
 
 ### Introducción
 
-Esta pequeña guía intenta explicar lo mismo que en la parte de [bash](../bash/REAMDE.md) pero para powershell.
+Esta pequeña guía intenta explicar lo mismo que en la parte de [bash](../bash/README.md) pero para powershell.
 
 ### Ayuda
 
@@ -181,7 +181,6 @@ Para ver las variables de entorno disponibles se puede lanzar la orden `Get-Chil
 ### Ejercicios
 
 1. Mostrar por pantalla cuál es el directorio actual, usando únicamente la orden `echo` (*Pista*: se pueden usar las variables que haga falta).
-1. Añadir al `PATH` el directorio `bin` dentro del `home` del usuario.
 1. Crea una variable llamada `VAR` que contenga el valor `Esto es una prueba`.
 1. Cambia el valor de la variable `VAR` para que contenga `20`.
 1. Comprobar si la variable está entre las variables de entorno.
@@ -190,8 +189,6 @@ Para ver las variables de entorno disponibles se puede lanzar la orden `Get-Chil
 ```
 Hola, soy "Pepe", vivo en "/Users/pepe", aunque ahora estoy en "/home/pepe/pruebas".
 ```
-
-> TIP: El `PATH` es una variable de entorno que indica en qué directorios se van a buscar los programas que se pueden lanzar desde la *shell*.
 
 
 ## Configuración de la shell
@@ -221,44 +218,28 @@ $ . file_rc.ps1
 
 En PowerShell hay 10 descriptores
 
-```
-0 - stdin
-
-1 - stdout (write-output, normal cmdlet output, non captured expression
-
-output)
-
-2 - stderr (write-error, throw, cmdlet non-terminating errors)
-
-3 - warnings (write-warning, cmdlet warning)
-
-4 - verbose (write-verbose and cmdlet -verbose output)
-
-5 - debug (write-debug and cmdlet debug output)
-
-6 - host (write-host, read-host, explicit out-host use)
-
-9 - combined (all output combined into a single - easy to redirect stream)
-```
+1. stdin
+1. stdout (write-output, normal cmdlet output, non captured expression output)
+1. stderr (write-error, throw, cmdlet non-terminating errors)
+1. warnings (write-warning, cmdlet warning)
+1. verbose (write-verbose and cmdlet -verbose output)
+1. debug (write-debug and cmdlet debug output)
+1. host (write-host, read-host, explicit out-host use)
+1. combined (all output combined into a single - easy to redirect stream)
 
 * Redirecciones
 ```
-$ echo "Hola" > file.txt
+$ >  o  comando | Out-File -Path Path
 ```
 ```
-$ grep Hola < file.txt
-Hola
+$ <  o  Write-Output | comando
 ```
 ```
-$ ls /directorio_inexistente/ 2> error.log
 ```
 * Tuberías (*pipes*)
 
-```
-$ echo "Hola" | sed 's/o/a/g'
-Hala
-```
-
+1. ByValue
+1. ByPropertyName
 
 
 ### Condiciones
