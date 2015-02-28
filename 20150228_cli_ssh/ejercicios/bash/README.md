@@ -670,7 +670,7 @@ Juanje
 ```
 
 ### Asignar valor por defecto
-Asigna un valor a la variable, pero sólo si está tiene ya algún valor.
+Asigna un valor a la variable, pero sólo si está no tiene ya algún valor.
 ```
 $ NAME=""
 $ echo $NAME
