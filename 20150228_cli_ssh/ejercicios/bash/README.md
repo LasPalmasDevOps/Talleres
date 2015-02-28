@@ -614,6 +614,25 @@ case "$VAR" in
     ;;
 esac
 ```
+* `&&` y `||`
+```
+$ true && echo "La condición es cierta"
+La condición es cierta
+$ false && echo "La condición es cierta"
+$ true || echo "La condición es falsa"
+$ false || echo "La condición es falsa"
+La condición es falsa
+$ a=20
+$ [ "$a" = 20 ] && echo "a es igual a 20"
+a es igual a 20
+```
+
+### Ejercicios
+
+1. Copia en el directorio `pruebas` todos los archivos de `/bin/`, pero añadiéndoles la extensión `.sh`.
+1. Define una variable `a` con valor `50` y una `b` con valor `30`. Luego haz que se evalúe si `a` es mayor que `b` y que se muestre el valor de la suma en caso de ser cierto.
+
+> **TIP:** Mirar la ayuda del comando `expr`.
 
 
 ## Shellscripts
@@ -650,13 +669,92 @@ Incluso un ejecutable que no sea una *shell*:
 # Este script lo único que hace es borrarse a sí mismo.
 ```
 
+### Comentarios
+
+Los comentarios en Bash comienzan con el símbolo `#`:
+
+```
+#!/bin/bash
+
+# Esto es un comentario.
+
+#
+# Otro comentario más largo.
+#
+
+################################
+#                              #
+# Típica cajita de comentarios #
+#                              #
+################################
+
+```
+
 ### Ejercicios
 
 1. Prueba a hacer un script (tienes que darle permisos de ejecución) en el que el `sha-bang` sea `#!/bin/echo` y comprueba a ver qué hace.
+1. Crear un script que muestre por pantalla el número de parámetros que se le pasa y los muestre luego, uno por línea y en mayúsculas, como se muestra a continuación. En caso de no pasárse ningún parámetro, debe indicarlo:
+
+```
+$ ./my_script.sh pera manzana naranja plátano
+Se han pasado 4 parámetros:
+* PERA
+* MANZANA
+* NARANJA
+* PLÁTANO
+$ ./my_script.sh
+No se ha pasado ningún parámetro.
+```
 
 
+---
 
-## Expansión de variables con ${}
+# Material extra y referencias
+
+
+## Captura del resultado de lanzar una orden
+
+Muchas veces querremos lanzar una orden y capturar el resultado en una variable, para usar dicho valor más adelante.
+
+Por ejemplo, una lista de archivos, el ID de un usuario o el número de resultados encontrados en una búsqueda.
+
+Eso se puede hacer de 2 formas:
+
+```
+$ var=`ls /bin/`
+```
+
+Y
+
+```
+$ var=$(ls /bin/)
+```
+
+Pero la segunda es la más recomendada. De hecho la primera ha sido desaconsejada desde el proyecto Bash, en favor de la segunda.
+Para más información, consulta el manual de bash o [éste artículo](http://wiki.bash-hackers.org/syntax/expansion/cmdsubst).
+
+
+## Expansión de variables
+
+La expansión de variables permite alterar de diferentes formas el valor de una variable, sin cambiar la variable en sí. Es muy útil cuando queremos definir valores predeterminados para una variable o si queremos usar solo una parte del contenido de la variable.
+
+Un típico ejemplo es el de querer cambiar la extensión de un archivo:
+
+```
+$ ls
+mi_foto.JPG
+$ filename=$(ls)
+$ mv $filename ${filename%%JPG}jpg
+$ ls
+mi_foto.jpg
+```
+
+Aunque un ejemplo más realista sería cambiar la extensión a un conjunto de archivos:
+
+```
+$ for foto in images/*.JPG ; do mv $foto ${foto%%JPG}jpg ; done
+```
+
 
 ### Valor por defecto
 
@@ -816,4 +914,3 @@ $ echo ${a/foo/fu}
 /etc/kung/fu
 ```
 
-# WIP
