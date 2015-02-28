@@ -463,7 +463,7 @@ De esta forma, tanto si arrancamos la *shell* de una u otra forma, se cargarán 
 ## Entrada y salida
 
 * Descriptores especiales (`stdin`, `stdout` y `stderr`)
-* Redirecciones
+* Redirecciones. Manda la salida o entrada a un archivo u orden. Si el archivo no existe, lo crea, si existe, reemplaza su valor por el que se le pasa.
 ```
 $ echo "Hola" > file.txt
 ```
@@ -482,6 +482,9 @@ entrada estándar al archivo "file.txt".
 Hasta que le dé a la combinación de teclas "Ctrl-D".
 ^D
 ```
+* Concatenación (`>>` y `<<`). Lo mismo que las anteriores pero, en vez de reemplazar el valor (si el archivo ya existe), lo que hace es añadirlo al final del archivo.
+
+> **NOTA:** En el apartado de *"Material extra y referencias"* del final hay un sub-apartado relacionado (*HERE documents*), que puede ser de interés.
 
 * Tuberías (*pipes*)
 
@@ -490,6 +493,7 @@ $ echo "Hola" | sed 's/o/a/g'
 Hala
 ```
 
+> **NOTA:** Si se quiere profundizar en esta parte, es muy recomendable leer [la documentación sobre redirecciones de la guía avanzada](http://www.tldp.org/LDP/abs/html/io-redirection.html).
 
 ### Ejercicios
 
