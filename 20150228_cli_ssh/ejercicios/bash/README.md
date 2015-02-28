@@ -100,7 +100,7 @@ Existen 3 tipos de permisos básicos en los archivos:
 * Escritura (**w**)
 * Ejecución (**x**)
 
-Para cada entidad se define una combinación de estos permisos. Por ejemplo, un archivo que sólo se pueda leer, pero no escribir ni ejecutar:
+Para cada entidad se define una combinación de estos permisos. Por ejemplo, un archivo que solo se pueda leer, pero no escribir ni ejecutar:
 
 ```
 r--
@@ -227,7 +227,7 @@ $ chown new_owner:webadmin file.txt
 1. Crear un archivo y ver con qué permisos se crea.
 1. ¿Cómo serían esos permisos en octal?
 1. Darle permisos de ejecución.
-1. Hacer que sólo el propietario del archivo pueda leer el archivo.
+1. Hacer que solo el propietario del archivo pueda leer el archivo.
 1. Crear un directorio y ver con qué permisos se crea.
 1. ¿Cómo serían esos permisos en octal?
 1. Ponerle permisos 444. ¿Qué permisos serían esos? ¿Tu usuario podría entrar en el directorio?
@@ -670,7 +670,7 @@ Juanje
 ```
 
 ### Asignar valor por defecto
-Asigna un valor a la variable, pero sólo si está no tiene ya algún valor.
+Asigna un valor a la variable, pero solo si ésta no tiene ya algún valor.
 ```
 $ NAME=""
 $ echo $NAME
@@ -736,7 +736,7 @@ $ echo ${GIT_COMMIT:0:10}
 
 
 ### Subcadena quitando del principio
-Con un sólo # se quitará la primera ocurrencia de lo que esté detrás
+Con un solo # se quitará la primera ocurrencia de lo que esté detrás
 ```
 $ B="blablabla..."
 $ echo ${B#bla}
@@ -764,7 +764,7 @@ $ echo ${D##*chroot}
 
 ## Subcadena quitando del final
 
-Con un sólo `#` se quitará última ocurrencia de lo que esté detrás
+Con un solo `#` se quitará última ocurrencia de lo que esté detrás
 ```
 $ B="blablabla...blablabla"
 $ echo ${B%bla}
