@@ -108,7 +108,7 @@ Para probar, podemos conectarnos al servidor SSH que hayamos creado en local, al
 
 ## Configurando SSH
 
-Con el fichero `$HOME/config` podemos configurar muchas opciones de SSH. `man ssh_config` nos dejará ver un listado completo de opciones.
+Con el fichero `$HOME/.ssh/config` podemos configurar muchas opciones de SSH. `man ssh_config` nos dejará ver un listado completo de opciones.
 
 Generalmente el fichero tiene la siguiente forma:
 
