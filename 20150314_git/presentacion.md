@@ -38,7 +38,7 @@ controls: false
 
 ## Tipos de VCS I
 
-### Sin red, un sólo desarollador
+### Sin red, un solo desarollador
   * 1972 -> Source Code Control System
   * 1980 -> Revision Control System
 
@@ -84,7 +84,7 @@ controls: false
 ## Desarrollo del Kernel II
 ### BitKeeper
   * 02/2002 BitMover regala licencia
-  * 04/2005 BitMover retira Licencia
+  * 04/2005 BitMover retira licencia
   
 --
 
