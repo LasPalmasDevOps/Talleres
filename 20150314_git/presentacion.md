@@ -66,7 +66,7 @@ controls: false
 
 --
 
-## Ventajas de los VCS
+## Ventajas de los VCS distruidos
 
    * Rapidez
    * Revisiones pequeñas y sin molestar
