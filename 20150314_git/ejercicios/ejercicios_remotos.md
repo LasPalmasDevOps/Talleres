@@ -20,4 +20,11 @@ En la primera parte habíamos creado un repositorio llamado "ProyectoWorld", cre
 
 ## 4. Manejo de conflictos
 
-Busca el repositorio https://github.com/LasPalmasDevOps/sandbox, hazle un fork y descárgate tu nuevo repositorio 
+Busca el repositorio https://github.com/LasPalmasDevOps/sandbox, hazle un fork y descárgate tu nuevo repositorio, una vez que lo descarges comprueba nuevo de rama que tienes en local y en remoto. Si no están parejas hazlo hasta que lo sean (usa git branch -vv).
+
+Una vez que lo tengas desde tu rama master (en este orden):
+
+- Realiza un merge a la rama "primera-rama"
+- Realiza un merge a la rama "segunda-rama" 
+
+Corrige los problemas que puedas tener, y una vez finalizado ejecuta el script.
