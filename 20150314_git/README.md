@@ -7,7 +7,7 @@ Después veremos en particular git, y veremos lo siguiente:
 * Tipos de sistemas de control de versiones
 * Instalación y configuración básica
 * Mi primer repositorio
-*  Clonado de mi primer repositorio
+* Clonado de mi primer repositorio
 * Solución de problemas
 * Flujos
 * Ramas
