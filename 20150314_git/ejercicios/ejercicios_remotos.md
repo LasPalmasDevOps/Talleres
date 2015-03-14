@@ -2,6 +2,8 @@
 
 Si no tienes usuario crea una cuenta en github
 
+Añade a tu configuración que tu herramienta de gestión de conflictos es tkdiff (salvo que te gusta más otra).
+
 ## 1. Claves ssh
 
 Si tienes clave ssh ponla en tu repositorio de github
