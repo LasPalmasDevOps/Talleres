@@ -98,6 +98,7 @@ $ ls -a mi_primer_repo
 ### Nuestro primer commit
 
 ```
+$ cd mi_primer_repo/
 $ echo "hola" > f.txt
 $ git add f.txt
 $ git commit -m "primer commit"
