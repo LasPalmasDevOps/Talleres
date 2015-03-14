@@ -25,12 +25,12 @@ Vuelve al fichero “hallo.txt”, añade tras el mensaje que contiene “Hallo,
 Visualiza el historial de tu repositorio. Comprueba los resultados de las siguientes
 entradas:
 
-*git log --pretty=oneline --max-count=2
-git log --pretty=oneline --since='5 minutes ago'
-git log --pretty=oneline --since='5 minutes ago'
-git log --pretty=oneline --until='5 minutes ago'
-git log --pretty=oneline --author=<your name>
-git log --pretty=oneline --all*
+* *git log --pretty=oneline --max-count=2*
+* *git log --pretty=oneline --since='5 minutes ago'*
+* *git log --pretty=oneline --since='5 minutes ago'*
+* *git log --pretty=oneline --until='5 minutes ago'*
+* *git log --pretty=oneline --author=<your name>*
+* *git log --pretty=oneline --all*
 
 
 ¿Cómo sería la entrada para visualizar los cambios realizados en la última semana? ¿Y si quisieras ver los cambios que TÚ has realizado la última semana?
@@ -83,16 +83,16 @@ hist = log --pretty=format:...
 ## 10. Alias del shell
 Dirígete al fichero .profile del directorio $home y añade las siguientes líneas (algunas de las instrucciones todavía no se han visto)
 
-*alias gst='git status '
-alias ga='git add '
-alias gb='git branch '
-alias gc='git commit'
-alias gd='git diff'
-alias go='git checkout '
-alias gk='gitk --all&'
-alias gx='gitx --all'
-alias got='git '
-alias get='git '*
+* *alias gst='git status '*
+* *alias ga='git add '*
+* *alias gb='git branch '*
+* *alias gc='git commit'*
+* *alias gd='git diff'*
+* *alias go='git checkout '*
+* *alias gk='gitk --all&'*
+* *alias gx='gitx --all'*
+* *alias got='git '*
+* *alias get='git '*
 
 Para recargar la información del fichero escribe en consola “source .profile” ¿Qué diferencia existe entre escribir en consola ‘gst’ y ‘git st’?
 
