@@ -306,7 +306,7 @@ pack-6ca1c4f22503f0a4ce672fcdea373d4ee1e09aaa.pack
 
 ## Área de preparación, caché o índice
 
-* Es una nuestra instántanea que vamos construyendo para la próxima revisión.
+* Es una nueva instántanea que vamos construyendo para la próxima revisión.
 
 * Si vienes de svn piensa que **svn add** añade un fichero a un control de versiones y **git add** añade contenido al área de preparación.
 
@@ -610,3 +610,250 @@ $ git log  --graph --pretty=oneline --decorate=short --abbrev-commit
 
 # Parte remota
 
+## Métodos de acceso
+
+* git
+* ssh
+* http
+* http
+* rysnc
+
+## Clonar un repositorio remoto con una nuestro
+
+* Es muy fácil *git clone repositorio_repoto* :-P
+
+```
+$ git clone https://github.com/LasPalmasDevOps/Talleres.git
+Clonar en «Talleres»...
+remote: Counting objects: 468, done.
+remote: Compressing objects: 100% (28/28), done.
+remote: Total 468 (delta 16), reused 0 (delta 0), pack-reused 434
+Receiving objects: 100% (468/468), 729.52 KiB | 680.00 KiB/s, done.
+Resolving deltas: 100% (190/190), done.
+Checking connectivity... hecho.
+```
+
+## Gestionado de repositorios remotos con nuestro repositorio local
+
+
+### Listar
+
+* Un repositorio local puede tener uno o varios repositorio remotos, para ver cuales tener configurados.
+
+```
+$ git remote
+origin
+```
+
+* *origin* se define como repositorio original cuando clonamos un repositorio.
+
+* Si quieres tener la información de cual es nuestro repositorio remoto y el protocolo de comunicación.
+
+```
+$ git remote -v
+origin  https://github.com/LasPalmasDevOps/Talleres.git (fetch)
+origin  https://github.com/LasPalmasDevOps/Talleres.git (push)
+```
+
+### Añadir
+
+* Para añadir un repositorio remoto al nuestro *git remote add ALIAS REPOSITORIO*
+
+
+```
+$ git remote add otro_origen https://mi_segundo_repo/repo.git
+$git remote -v
+origin  https://github.com/LasPalmasDevOps/Talleres.git (fetch)
+origin  https://github.com/LasPalmasDevOps/Talleres.git (push)
+otro_origen https://mi_segundo_repo/repo.git (fetch)
+otro_origen https://mi_segundo_repo/repo.git (push)
+```
+
+### Cambiar alias
+
+* Para cambiar el alias *git remote rename alias nuevo_alias*
+
+```
+$ git remote rename otro_origen segundo_origen
+$ git remote -v
+origin  https://github.com/LasPalmasDevOps/Talleres.git (fetch)
+origin  https://github.com/LasPalmasDevOps/Talleres.git (push)
+segundo_origen  https://mi_segundo_repo/repo.git (fetch)
+segundo_origen  https://mi_segundo_repo/repo.git (push)
+```
+
+### Cambiar url de un repositorio remoto
+
+* Para cambiar se hace con *git remote set-url alias nueva_url*
+
+```
+$ git remote set-url  segundo_origen https://otra_url/repo.git
+$ git remote -v
+origin  https://github.com/LasPalmasDevOps/Talleres.git (fetch)
+origin  https://github.com/LasPalmasDevOps/Talleres.git (push)
+segundo_origen  https://otra_url/repo.git (fetch)
+segundo_origen  https://otra_url/repo.git (push)
+
+
+```
+### Borrado
+
+Para borrar repositorio remoto al nuestro *git remote del alias*
+
+```
+$ git remote remove segundo_origen
+$ git remote -v
+origin  https://github.com/LasPalmasDevOps/Talleres.git (fetch)
+origin  https://github.com/LasPalmasDevOps/Talleres.git (push)
+```
+
+## Sincronización de repositorio
+
+* Para traernos los cambios del repositorio remoto debemos hacer *git pull repositorio rama*, por defecto si ejecutamos *git pull* estaremos haciendo *git pull origin master*
+
+* Para subir los cambios lo debemos hacer con *git push repositorio rama*, lo habitual es *git push origin master*
+
+### Cambio de comportamiento de *git push*
+
+Las versiones anteriores de git tenían un comportamiento por defecto a la hora de hacer push llamado ‘matching’.
+
+Este consiste en que, al hacer push, se sincronizan todas las ramas del proyecto con sendas ramas en el servidor con el mismo nombre (ya hablaremos en detalle de las ramas más adelante). Si en el servidor no existe una rama con el nombre de alguna local, se crea automáticamente.
+
+La versión 2 de git cambiará ese comportamiento, que pasará a ser simple, lo que significa que se sube sólo la rama que tienes activa en este momento a la rama de la que has hecho el pull, pero te dará un error si el nombre de esa rama es distinto.
+
+Mientras tanto, actualmente, git te avisa (a cada push) de que se va a hacer este cambio y te avisa de que puedes configurar este comportamiento por defecto con un mensaje como este:
+
+```
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+In Git 2.0, Git will default to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+``` 
+
+Para elegir el comportamiento que prefieres sólo tienes que usar, como ya hemos visto para otras configuraciones, el comando git config de este modo:
+
+*git config --global push.default OPCION*
+
+Por ejemplo:
+
+*git config --global push.default matching*
+
+Usaría la opción matching en todos tus repositorios, pero:
+
+*git config --local push.default simple*
+
+Usaría la opción simple sólo en el repositorio en el que te encuentras.
+
+Otras opciones posibles son:
+
+* current: Sube los cambios de la rama activa a una rama remota del mismo nombre. Si no existe esa rama remota, se crea.
+* nothing: Esta opción sólo tiene sentido para test, debugs y esas cosas. Al hacer push no se subirá nada a repositorio remoto.
+* upstream: Al igual que simple, sube la rama que tienes activa a la rama de la que has hecho el pull pero, en este caso, no te dará error si el nombre de esa rama es distinto.
+
+
+## Ramas
+
+### Ver ramas
+* *git branch*
+
+```
+$ git branch
+* master
+```
+
+### Creación de rama
+
+* *git branch nueva-rama*
+
+```
+$ git branch nueva-rama
+$ git branch
+* master
+  nueva-rama
+```
+
+* El asterisco marca la rama activa
+
+### Cambiar de rama
+
+* *git checkcout nueva-rama*
+
+```
+$ git checkout nueva-rama
+Switched to branch 'nueva-rama'
+```
+
+> *TIP*: Para hacer las dos cosas a la vez *git checkout -b nueva-rama*
+
+### Fusionar ramas
+
+* Se realiza con *git merge*
+* Supongamos que hemos realizado cambios en rama *nueva-rama* y queremos fusionarlo en nuestra rama master.
+
+#### Si no hay conflictos
+
+```
+(nueva-rama)$ git checkout master
+Switched to branch 'master'
+(master)$ git merge nueva-rama
+Updating d27e49f..0654c1b
+Fast-forward
+ a.txt | 1 +
+ 1 file changed, 1 insertion(+)
+```
+
+
+#### Si hay conflictos
+```
+(master)$ git merge nueva-rama
+Automezclado a.txt
+CONFLICTO(contenido): conflicto de fusión en a.txt
+Automatic merge failed; fix conflicts and then commit the result.
+(master|MERGING)$ git mergetool 
+Merging:
+a.txt
+
+Normal merge conflict for 'a.txt':
+  {local}: modified file
+  {remote}: modified file
+Hit return to start merge resolution tool (tkdiff):
+(master|MERGING)$ git add a.txt
+(master|MERGING)$ git commit -m "conflicto resuelto"
+[master 7d292a0] conflicto resuelto
+isra@xps:~/tmp/3/ramas (master)$ 
+```
+
+* Pantallazo tkdiff
+![tkdiff](img/conflicto_tkdiff.png)
+
+
+### Ramas remotas
+
+#### Creación de rama desde local
+
+* *git push --set-upstream origin nueva-rama*
+
+#### Creación desde rama remota a rama local
+
+* *git checkout -b nueva-rama origin/nueva-rama*
+
+
+## Ejercicios segunda parte
+
+* [Aquí los tienes](ejercicios/ejercicios_remotos.md)

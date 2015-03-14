@@ -1,5 +1,5 @@
 ## 0. Directorio de trabajo
-Vamos a crear las carpeta “home/usuario/git/local”. Sitúate dentro de la carpeta “local” para realizar esta lista de ejercicios con git.
+Vamos a crear las carpeta “/home/usuario/git/local”. Sitúate dentro de la carpeta “local” para realizar esta lista de ejercicios con git.
 
 ## 1. Configuración
 Como git guarda nuestro nombre y dirección de correo electrónico cada vez que realizamos un commit, el primer paso es decirle a git cuáles son. Ya que estás en el proceso de configuración, indica que tu editor por defecto es “vim”.
