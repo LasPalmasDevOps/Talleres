@@ -244,7 +244,7 @@ post-update.sample     prepare-commit-msg.sample  update.sample
 #### info/exclude
 
 * Patrones de los ficheros que git debe ignorar
-* También podemos usar **.gitigone** 
+* También podemos usar **.gitignore** 
 
 ```
 $ cat .git/info/exclude 
