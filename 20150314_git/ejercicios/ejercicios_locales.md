@@ -83,16 +83,16 @@ hist = log --pretty=format:...
 ## 10. Alias del shell
 Dirígete al fichero .profile del directorio $home y añade las siguientes líneas (algunas de las instrucciones todavía no se han visto)
 
-*alias gst='git status '*
-*alias ga='git add '*
-*alias gb='git branch '*
-*alias gc='git commit'*
-*alias gd='git diff'*
-*alias go='git checkout '*
-*alias gk='gitk --all&'*
-*alias gx='gitx --all'*
-*alias got='git '*
-*alias get='git '*
+* *alias gst='git status '*
+* *alias ga='git add '*
+* *alias gb='git branch '*
+* *alias gc='git commit'*
+* *alias gd='git diff'*
+* *alias go='git checkout '*
+* *alias gk='gitk --all&'*
+* *alias gx='gitx --all'*
+* *alias got='git '*
+* *alias get='git '*
 
 Para recargar la información del fichero escribe en consola “source .profile” ¿Qué diferencia existe entre escribir en consola ‘gst’ y ‘git st’?
 
