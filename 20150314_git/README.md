@@ -12,3 +12,12 @@ Después veremos en particular git, y veremos lo siguiente:
 * Flujos
 * Ramas
 * Hooks
+
+[Enlace al taller](taller.md)
+
+Enlaces de interes:
+
+* Libro Pro Git: es una referencia obligatoria de git, tiene versión en [español](http://git-scm.com/book/es/v2) y en [inglés](http://git-scm.com/book/en/v2)
+* [TryGit](https://try.github.io/levels/): Todo un clásico para aprender git de forma interactiva
+* [Guía rápida de git](http://rogerdudler.github.io/git-guide/index.es.html)
+* [Página de visualización de conceptos](http://onlywei.github.io/explain-git-with-d3/)
