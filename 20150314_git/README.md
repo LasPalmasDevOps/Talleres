@@ -22,3 +22,9 @@ Enlaces de interes:
 * [TryGit](https://try.github.io/levels/): Todo un clásico para aprender git de forma interactiva
 * [Guía rápida de git](http://rogerdudler.github.io/git-guide/index.es.html)
 * [Página de visualización de conceptos](http://onlywei.github.io/explain-git-with-d3/)
+
+Workflows:
+
+* [Descripción de workflows](https://www.atlassian.com/git/tutorials/comparing-workflows)
+* [Git-Flow](http://nvie.com/posts/a-successful-git-branching-model/)
+* [Github workflow](https://guides.github.com/introduction/flow/)
