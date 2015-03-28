@@ -39,7 +39,7 @@ Checking connectivity... hecho.
 
 Esto copia el contenido (archivos, histórico y metadatos) de un repositorio.
 El repositorio que se copia puede ser local o remota. Los protocolos que se pueden usar en las URL son:
- 
+
 * git
 * ssh
 * http
@@ -248,4 +248,52 @@ Como vimos antes, la forma de comunicarse entre repositorios es mediante las ope
 Normalmente al "obtener cambios de otro repositorio" se suele asociar con la operación `pull`, pero la realidad es que `pull` es la combinación de las operaciones: `fetch` y `merge`.
 Es decir, obtiene loca cambios y, luego, hace un `merge` de dichos cambios con la rama actual.
 
+### Enviar cambios
+
+Se hace mediante el subcomando `push`:
+
+```
+$ git push origin git_2
+Counting objects: 7, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 370 bytes, done.
+Total 4 (delta 3), reused 0 (delta 0)
+To git@github.com:LasPalmasDevOps/Talleres.git
+   f8f4440..159c2ae  git_2 -> git_2
+```
+
+En este caso lo que he hecho es mandar los cambios al repositorio remoto que tenía identificado con el `remote` **origin** (en este caso: `git@github.com:LasPalmasDevOps/Talleres.git`) y le estoy diciendo que lo mande a la rama remota **git_2**.
+
+Lo que se manda son las diferencias entre la rama actual y la rama del repositorio remo al que se envían los cambios.
+
+Si la rama no existe en el repo remoto (y tengo permisos para ello), creará la rama en el repositorio de destino.
+
+
+### Recibir cambios
+
+Como vimos antes se hace mediante el subcomando `fetch` aunque, en la práctica, se usa el subcomando `pull`, ya que la mayoría de las veces se querrán actualizar los cambios en la rama actual.
+
+La forma de obtener los cambios sería:
+
+```
+git [repositorio] [rama]
+```
+
+El **repositorio** podría ser tanto la URL del repositorio del que vamos a obtener los cambios, como el `remote` asociado. Lo normal es que sea el `remote`.
+
+La **rama** sería el nombre de la rama del repositorio del que queremos obtener los cambios.
+
+Los cambios se mezclrían en la rama actual, por lo que es importante estar seguros de que estamos en la rama que queremos actualizar:
+
+```
+$ git checkout master
+$ git pull origin git_2
+```
+
+Este ejemplo vendría a decir:
+
+ * Cambiate a la rama local `master`.
+ * Trae las diferencias entre la rama remota (del repo `origin`) `git_2` y la rama local `master.
+ * Mezcla los cambios en la rama `master` local.
 
