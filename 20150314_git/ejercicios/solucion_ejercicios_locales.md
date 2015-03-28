@@ -104,7 +104,9 @@ Tras ver el contenido del fichero y del directorio de trabajo.
 ```
 git checkout master
 git checkout <hash>
-13. Etiquetando una version anterior
+```
+
+##13. Etiquetando una version anterior
 
 ```
 git tag -a v1.0.0-beta -m "Creando la primera version beta"
@@ -137,7 +139,7 @@ git tag -a v0.0.0 -m "Versión de prueba" <hash_del_1er_commit>
 git blame hallo.txt
 ```
 
-## 1. Deshaciendo cambios locales
+## 17. Deshaciendo cambios locales
 Tras guardar los cambios realizados en el fichero “ciao.txt”.
 ```
 git st
