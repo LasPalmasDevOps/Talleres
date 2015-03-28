@@ -41,7 +41,7 @@ A continuación se explica el formato, la metodología y se listan los talleres 
   * Bash, PowerShell.
   * Uso básico de SSH.
   * Claves públicas SSH.
-1. Sistema de control de versiones:
+1. [Sistema de control de versiones](20150314_git):
   * Git.
   * Workflows.
 1. Herramientas de gestión de proyectos:
