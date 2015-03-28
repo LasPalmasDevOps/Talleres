@@ -13,7 +13,8 @@ Después veremos en particular git, y veremos lo siguiente:
 * Ramas
 * Hooks
 
-[Enlace al taller](taller.md)
+[Enlace al primer taller](taller.md)
+[Enlace al segundo taller](taller_2.md)
 
 Enlaces de interes:
 
