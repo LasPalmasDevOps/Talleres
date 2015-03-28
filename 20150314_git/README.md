@@ -14,6 +14,7 @@ Después veremos en particular git, y veremos lo siguiente:
 * Hooks
 
 [Enlace al primer taller](taller.md)
+
 [Enlace al segundo taller](taller_2.md)
 
 Enlaces de interes:
