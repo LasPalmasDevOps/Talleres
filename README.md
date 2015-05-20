@@ -55,7 +55,7 @@ A continuación se explica el formato, la metodología y se listan los talleres 
   * Pull requests.
   * Wiki.
   * Organizaciones.
-1. Gestores de dependencias:
+1. [Gestores de dependencias](20150523_dependencias):
   * Ruby Gems.
   * Pip.
   * Composer.
