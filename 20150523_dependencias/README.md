@@ -17,6 +17,7 @@ Los profesionales que nos ayudarán esta vez son:
 * [Ibán Domínguez](http://www.ibandominguez.com/) (php)
 
 
-Enlaces de interes:
+Enlaces de interés:
 
-
+* [Bundler](http://bundler.io/) (ruby)
+* [Composer](https://getcomposer.org/) (php)
