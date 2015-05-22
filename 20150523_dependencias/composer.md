@@ -35,9 +35,9 @@ que describe las dependencias que se necesitan.
 
 ```json
 {
-    "require": {
-        "monolog/monolog": "1.2 *."
-    }
+  "require": {
+    "monolog/monolog": "1.2 *."
+  }
 }
 ```
 
@@ -122,7 +122,7 @@ A continuación las dependencias serán descargadas en el directorio vendor.
 ## Autoloading
 
 Además de instalar las librerías, composer genera un autoloader que está preparado
-para cargar todas nuestras dependencias. Lo único que tenemos que hacer es incluirlo 
+para cargar todas nuestras dependencias. Lo único que tenemos que hacer es incluirlo
 en nuestro proyecto:
 
 ```php
@@ -146,9 +146,9 @@ La primera (y, a menudo única key) que se usa es require, require nos permite d
 
 ```json
 {
-    "require": {
-        "monolog/monolog": "1.0 *."
-    }
+  "require": {
+    "monolog/monolog": "1.0 *."
+  }
 }
 ```
 
@@ -180,7 +180,7 @@ El operador `~` define un set de versiones, por ejemplo `~1.2` es equivalente a
 `>=1.2<2.0.0`, mientras que `~1.2.3` es equivalente a `>=1.2.3<1.3.0`.
 
 El operador `^` se comporta de manera muy similar pero nos da un poco más de flexibilidad. Por ejemplo `^1.2.3`
-es equivalente a `>=1.2.3<2.0.0` ya que siguiendo los patrones de versionamiento semántico, no deberían haber actualizaciones que comprometiesen la estabilidad si no cambiase el número principal. 
+es equivalente a `>=1.2.3<2.0.0` ya que siguiendo los patrones de versionamiento semántico, no deberían haber actualizaciones que comprometiesen la estabilidad si no cambiase el número principal.
 
 ## Instalación de dependencias
 
@@ -213,8 +213,8 @@ Para omitir composer.lock e instalar las últimas versiones usaremos composer up
 php composer.phar update
 ```
 > ** Nota: ** Composer mostrará una advertencia al ejecutar un comando `install` si
- composer.lock` y `composer.json` no están sincronizados.
- 
+composer.lock` y `composer.json` no están sincronizados.
+
 Si solo deseamos actualizar una dependencia, lo podemos hacer de la siguiente manera:
 
 ```sh
@@ -251,9 +251,9 @@ También podemos utilizar composer para el autoloading de nuestro propio código
 
 ```json
 {
-    "autoload": {
-        "psr-4": {"Acme\\": "src/"}
-    }
+  "autoload": {
+    "psr-4": {"Acme\\": "src/"}
+  }
 }
 ```
 
