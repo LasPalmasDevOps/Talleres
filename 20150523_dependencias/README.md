@@ -19,5 +19,12 @@ Los profesionales que nos ayudarán esta vez son:
 
 Enlaces de interés:
 
-* [Bundler](http://bundler.io/) (ruby)
-* [Composer](https://getcomposer.org/) (php)
+* ***Ruby***
+  * [Bundler](http://bundler.io/)
+* ***PHP***
+  * [Composer](https://getcomposer.org/)
+* ***Python***
+  * [pip](https://pypi.python.org/pypi/pip)
+  * [setuptools](https://pypi.python.org/pypi/setuptools)
+  * [virtualenv](https://pypi.python.org/pypi/virtualenv)
+  * [virtualenvwrapper](https://pypi.python.org/pypi/virtualenvwrapper)
