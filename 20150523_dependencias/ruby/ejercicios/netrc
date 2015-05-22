@@ -1,0 +1,3 @@
+machine api.github.com
+  login usuario
+  password contraseña
