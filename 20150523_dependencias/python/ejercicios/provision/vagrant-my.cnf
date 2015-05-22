@@ -1,0 +1,11 @@
+[mysql]
+user=root
+password=vagrant
+
+[mysqldump]
+user=root
+password=vagrant
+
+[mysqladmin]
+user=root
+password=vagrant
