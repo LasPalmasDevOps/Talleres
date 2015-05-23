@@ -1,0 +1,20 @@
+.slide.cover h1 {
+  font-size: 3em !important;
+}
+
+.logos img {
+  display: inline-block;
+  margin-left: 1em;
+  height: 50px;
+}
+
+.logos img.highlight {
+  height: 125px;
+}
+
+img.right-sidebar {
+  float: right;
+}
+
+blockquote {
+}

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <title>Gestión de dependencias en Ruby</title>
+
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" media="screen" href="core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" media="screen" href="extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/style/swiss.css">
+
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/transition/horizontal-slide.css">
+
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="core/print.css">
+  <link rel="stylesheet" href="css/default.css">
+
+  <!-- highlightjs -->
+  <link rel="stylesheet" href="themes/highlightjs/solarized_light.css">
+  <script src="scripts/highlight.pack.js"></script>
+
+  <!-- Required Modernizr file -->
+  <script src="modernizr.custom.js"></script>
+</head>
+
+<body>
+  <div class="deck-container">
+
+    <section class="slide cover">
+      <div class="vcenter">
+        <h1>Dependencias en Ruby</h1>
+
+        <p>Imobach González Sosa</p>
+        <p><a href="https://github.com/imobach">http://github.com/imobach</a></p>
+        <p><a href="https://twitter.com/u/imobachgs">@imobachgs</a></p>
+    </section>
+
+    <section class="slide">
+      <h1>RubyGems</h1>
+    </section>
+
+    <!-- Begin slides. Just make elements with a class of slide. -->
+    <section class="slide">
+      <h2>Al principio</h2>
+      <ul>
+        <li>Ruby nació en 1995</li>
+        <li>Instalación manual de bibliotecas y aplicaciones</li>
+        <li>Las bibliotecas se instalan y cargan desde unas rutas predeterminadas (<em>$LOAD_PATH</em>)</li>
+        <li><a href="http://web.archive.org/web/20030926234243/http://raa.ruby-lang.org/">Ruby Application Archive</a></li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>RubyGems (2004)</h2>
+      <blockquote>
+        Sistema de gestión de paquetes que permite instalar aplicaciones y bibliotecas
+      </blockquote>
+      <ul>
+        <li><a href="https://rubygems.org/">https://rubygems.org/</a></li>
+        <li>Los paquetes se llaman <em>gemas</em></li>
+        <li>Ofrece una interfaz en línea de órdenes (CLI)</li>
+        <li>Integrado desde Ruby 1.9</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>¿Cómo funciona?</h2>
+      <ul>
+        <li>Resuelve dependencias</li>
+        <li>Descarga, compila (si es necesario) e instala</li>
+        <li>Instala las gemas en el GEM_PATH</li>
+        <li>Permite la instalación de varias versiones de la misma gema (!)</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>CLI</h2>
+      <pre><code class="bash">$ gem search rails
+
+$ gem list
+
+$ gem install --user-install nokogiri
+Building native extensions.  This could take a while...
+
+$ gem update rails
+
+$ gem content rails
+
+$ gem help</code></pre>
+    </section>
+
+    <section class="slide">
+      <h2>Un poco de código</h2>
+      <pre><code class="ruby">require "rubygems" # No es necesario (sólo Ruby &lt;= 1.8)
+require "octokit"</code></pre>
+
+      <ul>
+        <li>"require" añade la ruta de la gema al <em>$LOAD_PATH</em></li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>gemspec</h2>
+      <pre><code class="ruby">Gem::Specification.new do |spec|
+  spec.add_development_dependency "bundler", "~> 1.0"
+  spec.authors = ["Yehuda Katz", "José Valim"]
+  spec.description = "Thor is a toolkit for building..."
+  spec.email = "ruby-thor@googlegroups.com"
+  spec.executables = %w[thor]
+  spec.files = %w[.document thor.gemspec]
+    + Dir['*.md', 'bin/*', 'lib/**/*.rb']
+  spec.homepage = "http://whatisthor.com/"
+  spec.licenses = %w[MIT]
+  spec.name = "thor"
+  spec.require_paths = %w[lib]
+  spec.required_rubygems_version = ">= 1.3.5"
+  spec.summary = spec.description
+  spec.version = Thor::VERSION
+end</code></pre>
+    </section>
+
+    <!-- complejidad -->
+
+    <section class="slide">
+      <h1>Y entonces llegó Rails</h1>
+    </section>
+
+    <section class="slide">
+      <h2>Mayor complejidad</h2>
+      <ul>
+        <li>Aplicaciones más complejas y con más dependencias</li>
+        <li>Mecanismos de resolución muy simples
+          <ul>
+            <li>Supongamos que tenemos instaladas las versiones 1.0 y 2.0 de una gema <strong>C</strong></li>
+            <li><strong>A</strong> depende de <strong>C</strong> (cualquier versión)</li>
+            <li><strong>B</strong> depende de <strong>C 1.0</strong></li>
+            <li>¿Qué ocurre si se carga primero <strong>A</strong>?</li>
+          </ul>
+        </li>
+        <li>Para asegurar que dos usuarios instalan las mismas dependencias, hay que especificar versiones manualmente</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Soluciones</h2>
+      <ol>
+        <li><a href="https://rvm.io/">Ruby Version Manager</a> (2009)
+          <ul>
+            <li>Permite instalar varias versiones de Ruby a la vez</li>
+            <li>Añade el concepto de <em>gemset</em></li>
+            <li>No resuelve el problema de las dependencias, pero reduce su impacto</li>
+            <li>Han seguido apareciendo alternativas: <a href="https://github.com/sstephenson/rbenv">rbenv</a>, <a href="https://github.com/postmodern/chruby">chruby</a>, etc.
+          </ul>
+        </li>
+        <li><a href="https://bundler.io">Bundler</a> (2010)
+          <ul>
+            <li>Se centra en mejorar la gestión y resolución de dependencias</li>
+            <li>Asegura que se instalan <strong>exactamente</strong> las versiones necesarias</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <section class="slide">
+      <h1>Bundler</h1>
+    </section>
+
+    <section class="slide">
+      <h2>Consistencia</h2>
+      <ul>
+        <li>Se encarga de instalar/actualizar las dependencias de un proyecto</li>
+        <li>Asegura un entorno consistente instalando exactamente las versiones necesarias</li>
+        <li>Partiendo de una declaración de dependencias (<strong>Gemfile</strong>)...</li>
+        <li>... instala todas las gemas necesarias y guarda el resultado en un fichero (<strong>Gemfile.lock</strong>)</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Gemfile</h2>
+      <pre><code class="ruby">gem "octokit"
+gem "rspec"</code></pre>
+      <ul>
+        <li><code>bundle install</code> instalará las gemas y sus dependencias</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Gemfile.lock</h2>
+      <ul>
+        <li>Contiene una lista exhaustiva de las gemas que necesita la aplicación</li>
+        <li>Aparecen las declaradas en el <strong>Gemfile</strong> y sus dependencias</li>
+        <li>Se registra su número de versión exacto (ref, tag o rama en el caso de Git)</li>
+        <li><strong>Este fichero debe estar en el control de versiones</strong></li>
+        <li>Permite que, independientemente de la máquina, se usen las mismas versiones de todo</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Especificación de dependencias</h2>
+      <ul>
+        <li>Código Ruby</li>
+        <li>Se indica el nombre y las versiones requeridas</li>
+      </ul>
+
+      <pre><code class="ruby">gem 'rails', '4.2.0'
+gem 'pg', '&gt;= 0.17', '&lt;= 0.19'
+
+gem 'responders', '~&gt; 2.0'</code></pre>
+    </section>
+
+    <section class="slide">
+      <h2>Fuentes</h2>
+      <ul>
+        <li>Se pueden obtener las gemas de diferentes fuentes</li>
+        <li>Además, están soportados los siguientes tipos:
+          <ul>
+            <li>repositorios RubyGems (oficial o el tuyo propio)</li>
+            <li>un repositorio Git</li>
+            <li>una ruta del sistema de archivos</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Fuentes: ejemplos</h2>
+      <pre><code class="ruby">gem "rails", github: "rails/rails"
+gem "simple_form", github: "plataformatec/simple_form",
+  tag: "v3.1.0.rc2"
+gem "mi-gema", path: "/home/user/gems/mi-gema"
+
+source "http://my-own-repo.lan" do
+  gem "examples"
+end</code></pre>
+    </section>
+
+    <section class="slide">
+      <h2>Grupos</h2>
+      <pre><code class="ruby"># These gems are in the :default group
+gem 'nokogiri'
+gem 'sinatra'
+
+gem 'wirble', group: :development
+
+group :test do
+  gem 'faker'
+  gem 'rspec'
+end</pre></code>
+      <ul>
+        <li>Hay dependencias que sólo tienen sentido en un contexto determinado</li>
+        <li>Agrupando las gemas se pueden realizar operaciones sobre diferentes grupos</li>
+        <li>El caso más típico es diferenciar dependencias de ejecución, desarrollo y pruebas</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Instalación de dependencias</h2>
+      <pre><code class="bash">$ bundle install
+
+$ bundle install --path vendor/bundle
+
+$ bundle install --jobs 4
+
+$ bundle install --without test development</pre></code>
+    </section>
+
+    <section class="slide">
+      <h2>Actualizaciones</h2>
+      <pre><code class="bash">$ bundle update
+
+$ bundle update rails</pre></code>
+
+      <ul>
+        <li>Actualiza la gema a la última versión disponible que cumpla con la especificación</li>
+        <li>Si tiene dependencias, también las actualiza</li>
+        <li>Si no se especifica ninguna gema, intenta actualizarlas todas</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h1>Un poco de código</h1>
+    </section>
+
+    <section class="slide">
+      <h2>Manual</h2>
+      <pre><code class="ruby">require "rubygems" # No es necesario (sólo Ruby &lt;= 1.8)
+require "bundler/setup"
+require "octokit" # Declarada en el Gemfile</code></pre>
+      <ul>
+        <li>Pone todas las gemas del <strong>Gemfile</strong> en el <em>$LOAD_PATH</em></li>
+        <li>Disponibles para cargar usando <em>require</em></li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Automático</h2>
+      <pre>
+        <code class="ruby">require "rubygems"
+require "bundler/setup"
+Bundler.require(:default) # Carga todas las gemas declaradas</code></pre>
+      <ul>
+        <li>Carga todas las gemas de un grupo determinado</li>
+        <li>:default == "todas"</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h1>El futuro</h1>
+    </section>
+
+    <section class="slide">
+      <h2>La fusión</h2>
+      <ul>
+        <li>RubyGems y Bundler comparten mucha funcionalidad</li>
+        <li>La idea es que <a
+            href="http://andre.arko.net/2013/12/07/the-rumors-of-bundlers-death-have-been-greatly-exaggerated/">sea fusionen</a>... pero no todavía</li>
+        <li>Propuesta para un formato más eficiente para los índices</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+      <h1>Preguntas</h1>
+    </section>
+    <!-- End slides. -->
+
+    <!-- Begin extension snippets. Add or remove as needed. -->
+
+    <!-- deck.navigation snippet -->
+    <div aria-role="navigation">
+      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+    </div>
+
+    <!-- deck.status snippet -->
+    <p class="deck-status" aria-role="status">
+      <span class="deck-status-current"></span>
+      /
+      <span class="deck-status-total"></span>
+    </p>
+
+    <!-- deck.goto snippet -->
+    <form action="." method="get" class="goto-form">
+      <label for="goto-slide">Go to slide:</label>
+      <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+      <datalist id="goto-datalist"></datalist>
+      <input type="submit" value="Go">
+    </form>
+
+    <!-- End extension snippets. -->
+  </div>
+
+<!-- Required JS files. -->
+<script src="jquery.min.js"></script>
+<script src="core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+
+  $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+</script>
+</body>
+</html>
