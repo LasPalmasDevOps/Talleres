@@ -23,7 +23,9 @@ $ vagrant destroy -f
 ```ruby
 Vagrant.configure(2) do |config|
   config.vm.box = 'hashimoto/precise64'
+
   config.vm.define 'web'
+
 end
 ```
 
@@ -38,8 +40,11 @@ Añadir otra máquina llamada **database**.
 ```ruby
 Vagrant.configure(2) do |config|
   config.vm.box = 'hashimoto/precise64'
+
   config.vm.define 'web'
+
   config.vm.define 'database'
+
 end
 ```
 
@@ -54,10 +59,13 @@ Redireccionar el puerto `80` de la máquina virtual al puerto `8080` de la máqu
 ```ruby
 Vagrant.configure(2) do |config|
   config.vm.box = 'hashimoto/precise64'
+
   config.vm.define 'web' do |web|
     web.vm.network 'forwarded_port', guest: 80, host: 8080
   end
+
   config.vm.define 'database'
+
 end
 ```
 
@@ -86,7 +94,9 @@ Vagrant.configure(2) do |config|
   config.vm.define 'web' do |web|
     web.vm.network 'forwarded_port', guest: 80, host: 8080
   end
+
   config.vm.define 'database'
+
 end
 ```
 
@@ -110,12 +120,15 @@ Vagrant.configure(2) do |config|
 
   config.vm.define 'web' do |web|
     web.vm.network 'forwarded_port', guest: 80, host: 8080
+
     web.vm.provision 'shell', inline: <<-SHELL
       sudo apt-get update
       sudo apt-get install -y apache2
     SHELL
   end
+
   config.vm.define 'database'
+
 end
 ```
 
