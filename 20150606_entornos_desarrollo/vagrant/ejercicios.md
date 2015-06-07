@@ -125,6 +125,6 @@ $ vagrant provision web
 
 Comprueba ahora en tu navegador que está instalado el apache en la máquina virtual y que lo muestra por el puerto `8080`:
 
-http://localhost:8080
+[http://localhost:8080](http://localhost:8080)
 
 
