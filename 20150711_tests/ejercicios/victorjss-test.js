@@ -58,7 +58,7 @@ describe("Recently-Used List", function() {
 
         expect(this.list.length).toEqual(10);
         expect(this.list.get(0)).toEqual('three');
-        expect(this.list.get(9)).toEqual('ten');
+        expect(this.list.get(9)).toEqual('two');
     });
 });
 
