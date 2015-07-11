@@ -46,6 +46,28 @@ describe("Recently-Used List", function() {
     it("repeated item", function() {
         this.list.add('one');
         this.list.add('two');
+        this.list.add('two');
+
+        expect(this.list.length).toEqual(2);
+        expect(this.list.get(0)).toEqual('two');
+        expect(this.list.get(1)).toEqual('one');
+    });
+
+    it("repeated item movement", function() {
+        this.list.add('one');
+        this.list.add('two');
+        this.list.add('three');
+        this.list.add('two');
+
+        expect(this.list.length).toEqual(3);
+        expect(this.list.get(0)).toEqual('two');
+        expect(this.list.get(1)).toEqual('three');
+        expect(this.list.get(2)).toEqual('one');
+    });
+
+    it("repeated with full list", function() {
+        this.list.add('one');
+        this.list.add('two');
         this.list.add('three');
         this.list.add('four');
         this.list.add('five');
@@ -54,11 +76,11 @@ describe("Recently-Used List", function() {
         this.list.add('eight');
         this.list.add('nine');
         this.list.add('ten');
-        this.list.add('three');
+        this.list.add('ten');
 
-        expect(this.list.length).toEqual(10);
-        expect(this.list.get(0)).toEqual('three');
-        expect(this.list.get(9)).toEqual('two');
+        expect(this.list.length).toEqual(9);
+        expect(this.list.get(0)).toEqual('ten');
+        expect(this.list.get(8)).toEqual('one');
     });
 });
 
