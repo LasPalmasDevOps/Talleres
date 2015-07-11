@@ -38,19 +38,19 @@ describe("Recently-Used List", function() {
         expect(this.list.length).toEqual(2);
     });
 
-    it("size limit", function() {
+    it("remove repeated over 10", function() {
         for (var i=0; i < 10; i++) {
             this.list.add('item-' + i);
         }        
         this.list.add('item-2');
 
+        expect(this.list.length).toEqual(10);
         expect(this.list.get(0)).toEqual('item-2');
         expect(this.list.get(1)).toEqual('item-9');        
         expect(this.list.get(9)).toEqual('item-1');
-        expect(this.list.length).toEqual(10);
     });
 
-    it("empty items", function() {
+    it("add false items", function() {
         this.list.add('');
         this.list.add(false);
         this.list.add(0);
