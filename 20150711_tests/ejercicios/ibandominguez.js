@@ -25,7 +25,7 @@ describe("Recently-Used List", function() {
   });
 
   it("lists length must be 10", function() {
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i < 11; i++) {
       this.list.add('item' + i);
     }
 
@@ -33,10 +33,10 @@ describe("Recently-Used List", function() {
   });
 
   it("it replaces current values", function() {
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i < 11; i++) {
       this.list.add('item' + (i+1));
     }
 
-    expect(this.list.get(0)).toEqual('item20');
+    expect(this.list.get(0)).toEqual('item11');
   });
 });
