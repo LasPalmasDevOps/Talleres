@@ -65,7 +65,7 @@ describe("Recently-Used List", function() {
         expect(this.list.get(2)).toEqual('one');
     });
 
-    it("repeated with full list", function() {
+    it("repeated first element with full list", function() {
         this.list.add('one');
         this.list.add('two');
         this.list.add('three');
@@ -78,9 +78,9 @@ describe("Recently-Used List", function() {
         this.list.add('ten');
         this.list.add('ten');
 
-        expect(this.list.length).toEqual(9);
+        expect(this.list.length).toEqual(10);
         expect(this.list.get(0)).toEqual('ten');
-        expect(this.list.get(8)).toEqual('one');
+        expect(this.list.get(9)).toEqual('one');
     });
 });
 
