@@ -47,7 +47,7 @@ describe("Recently-Used List", function() {
         expect(this.list.length).toEqual(10);
         expect(this.list.get(0)).toEqual('item-2');
         expect(this.list.get(1)).toEqual('item-9');        
-        expect(this.list.get(9)).toEqual('item-1');
+        expect(this.list.get(9)).toEqual('item-0');
     });
 
     it("add false items", function() {
