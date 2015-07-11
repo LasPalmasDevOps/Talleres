@@ -82,5 +82,23 @@ describe("Recently-Used List", function() {
         expect(this.list.get(0)).toEqual('ten');
         expect(this.list.get(9)).toEqual('one');
     });
+
+    it("repeated last element with full list", function() {
+        this.list.add('one');
+        this.list.add('two');
+        this.list.add('three');
+        this.list.add('four');
+        this.list.add('five');
+        this.list.add('six');
+        this.list.add('seven');
+        this.list.add('eight');
+        this.list.add('nine');
+        this.list.add('ten');
+        this.list.add('one');
+
+        expect(this.list.length).toEqual(10);
+        expect(this.list.get(0)).toEqual('one');
+        expect(this.list.get(9)).toEqual('two');
+    });
 });
 
