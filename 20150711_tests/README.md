@@ -16,3 +16,5 @@ Si quieres conocer algo más sobre Esteban puedes indagar por [aquí](http://www
 * [Presentación](intro-testing.pdf)
 
 * [Ejercicios](ejercicio.zip)
+
+* Vídeo: pendiente de publicar.
