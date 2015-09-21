@@ -110,3 +110,52 @@ controls: false
 
  * No para almacenar ficheros binarios
  * No sirve como backup (no guarda metadatos)
+
+--
+
+## Falsos mitos sobre Git I
+
+ * Díficil
+ * Sólo para informáticos
+
+--
+
+## Falsos mitos sobre Git I
+
+<img src="img/novela_git.png">
+
+--
+
+## Falsos mitos sobre Git II
+
+ * Sólo lo usan los Frikies 
+
+--
+
+## Falsos mitos sobre Git II
+
+<img src="img/github_army.png">
+
+--
+
+## Falsos mitos sobre Git III
+
+ * Sólo los usan startup y similar
+
+--
+
+## Falsos mitos sobre Git III
+
+<img src="img/ms_gh.png">
+
+--
+
+## Falsos mitos sobre Git IV
+
+ *  Github es git
+
+--
+
+## Falsos mitos sobre Git IV
+
+<img src="img/github_git.png">
